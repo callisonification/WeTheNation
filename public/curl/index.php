@@ -10,6 +10,7 @@ curl_setopt($ch, CURLOPT_HEADER, 0);
 $result = curl_exec($ch);
 
 echo $result;
+echo 'anything';
 
 // close cURL resource, and free up system resources
 curl_close($ch);
