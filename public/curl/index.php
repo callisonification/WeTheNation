@@ -12,4 +12,4 @@ $result = curl_exec($ch);
 // close cURL resource, and free up system resources
 curl_close($ch);
 
-var_dump( $result );
+print_r($result);
