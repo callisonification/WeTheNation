@@ -156,7 +156,7 @@ body {
 	margin:8px auto;
 }
 /*==== Bills In News styles ====*/
-#topcontent {
+#topcontent, #bottom_content {
 	padding-top:25px;
 	position:relative;
 	z-index:1;
@@ -177,8 +177,37 @@ body {
 	margin:20px 0;
 	margin-left:45px;
 }
-#news .module:nth-child(10) .star_split {
+#news .module:nth-child(8) .star_split {
 	display:none;	
+}
+#news_heading {
+	padding:0 15px;	
+}
+.star_heading_left, .star_heading_right, #news_heading h2 {
+	float:left;	
+}
+.star_heading_left, .star_heading_right {
+	height:18px;
+	width:213px;
+	background-image:url(../img/slices/star_banner_long_left.png);
+	background-repeat:no-repeat;
+	margin-top:15px;	
+}
+.star_heading_right {
+	background-image:url(../img/slices/star_banner_long_right.png);
+	background-repeat:no-repeat;	
+}
+#news_heading h2, .sidebar_heading h3 {
+	color:#872501;
+	text-shadow: 0px 1px 1px #fff,
+				 0px 1px 1px #fff,
+				 0px 1px 1px #fff,
+				 0px 1px 1px #000,
+				 0px 1px 1px #000,
+				 0px 1px 1px #000;
+    filter: dropshadow(color=#000, offx=0, offy=1);
+	text-align:center;
+	margin:0 8px;
 }
 /*==== News module styles ====*/
 .icon {
@@ -237,18 +266,10 @@ body {
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );	
 }
 /*==== Sidebar Bills styles ====*/
-.bill_btns {
-	width:250px;
-	margin:0 auto;
-}
-.mbr_btns {
-	width:230px;
-	margin:0 auto;	
-}
 #sidebar_bills {
 	background-image:url(../img/slices/sidebar_bg_06.png);
 	height:420px;
-	margin:20px 0;
+	margin:30px 0;
 	margin-left:85px;
 	border:3px outset #fff6dc;	
 
@@ -260,11 +281,10 @@ body {
 	-webkit-box-shadow: inset 0px 2px 5px 0px #4d4b45;        
      box-shadow:  inset 0px 2px 5px 0px #4d4b45;	
 }
-/*==== Sidebar Members styles ====*/
 #sidebar_members {
 	background-image:url(../img/slices/sidebar_bg_06.png);
 	height:420px;
-	margin:20px 0;
+	margin:30px 0;
 	margin-left:85px;
 	border:3px outset #fff6dc;	
 	
@@ -275,6 +295,42 @@ body {
 	/*== inner shadow ==*/
 	-webkit-box-shadow: inset 0px 2px 5px 0px #4d4b45;        
      box-shadow:  inset 0px 2px 5px 0px #4d4b45;	
+}
+	/*==== filter button styles ====*/
+.bill_btns {
+	width:250px;
+	margin:0 auto;
+	margin-top:15px;
+}
+.mbr_btns {
+	width:230px;
+	margin:0 auto;
+	margin-top:15px;
+}
+	/*==== heading styles ====*/
+.sidebar_heading.sbb {
+	margin:-40px 0 0 118px;
+}	
+.sidebar_heading.sbm {
+	margin:30px 0 0 90px;
+}
+.sbm h3 {
+	margin-bottom:-8px;	
+}
+.sidebar_heading_left, .sidebar_heading_right, .sidebar_heading h3 {
+	float:left;	
+}
+.sidebar_heading_left, .sidebar_heading_right {
+	height:18px;
+	width:50px;
+	background-image:url(../img/slices/star_banner_small_left.png);
+	background-repeat:no-repeat;
+	margin-top:15px;
+	background-position:center center;	
+}
+.sidebar_heading_right {
+	background-image:url(../img/slices/star_banner_small_right.png);
+	background-repeat:no-repeat;	
 }
 /*==== CTA slider styles ====*/
 #slider {
@@ -299,6 +355,10 @@ body {
 #myCarousel a {
 	margin-top:0;	
 }
+.carousel-control {
+	background-color:#132c40;
+	border-color:#51707f;
+}
 /*==== Begin footer styles ====*/
 #aboutus {
 	margin-left:45px;	
@@ -319,6 +379,7 @@ body {
 	margin-bottom:25px;
 	line-height:1.75em;
 	color:#132c40;
+	text-shadow:0px 1px 1px #aaa;	
 }
 /*==== Quote styles ====*/
 #quotes {
@@ -348,7 +409,8 @@ body {
 	width:250px;
 	margin:0 auto;
 	padding-top:10px;
-	color:#132c40;	
+	color:#132c40;
+	text-shadow:0px 1px 1px #aaa;	
 }
 #quotes p span {
 	font-size:18px;	
@@ -455,6 +517,8 @@ body {
 }
 .footerlinks {
 	margin-left:0;
+	position:relative;
+	z-index:1;
 }
 .footerlinks li {
 	list-style-type:none;
