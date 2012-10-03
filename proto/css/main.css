@@ -1,7 +1,5 @@
 @charset "UTF-8";
-/* CSS Document */
-/* 
-	WeTheNation custom CSS
+/* 	CSS Document - WeTheNation
 	Author: Chris Allison
 	Date: 9-27-12
 	Version 1.0
@@ -34,6 +32,9 @@ body {
 	background: -ms-linear-gradient(top,  #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%);
 	background: linear-gradient(to bottom,  #ffffff 0%,#f3f3f3 50%,#ededed 51%,#ffffff 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 );	
+}
+.btn-toolbar .btn-group {
+	margin-left:10px !important;	
 }
 	/*== Spin properties ==*/
 @-webkit-keyframes spin {
@@ -77,6 +78,13 @@ body {
 	margin:0;
 	left:55px;	
 }
+.searchbtn {
+	margin:-10px 0 0 5px;	
+}
+.form-search:focus {
+	border-color:#d9042b !important;
+	box-shadow:#FFF !important;
+}
 #navsplit {
 	width:100%;
 	background-color:#6f0000;
@@ -88,7 +96,8 @@ body {
      box-shadow:  0px 2px 5px 0px #3a0101;
 }
 .btn-toolbar {
-	padding-left:18px;	
+	padding-left:18px;
+	margin-bottom:5px;
 }
 /*==== Branding Container styles ====*/
 #brand_container, #mbr_info_container {
@@ -654,7 +663,7 @@ body {
      box-shadow:  inset 0px 2px 5px 0px #222;			 	
 }
 .sortby {
-	margin:5px 52px;
+	margin:5px 45px;
 }
 .breadcrumb {
 	background:none;
@@ -751,17 +760,28 @@ body {
 }
 /*==== Member sidebar styles ====*/
 #mbr_sidebar {
-	border-left:3px ridge #dfe3e5;
+	-moz-border-image: url(../img/slices/border_slice_v.png) 0 0 0 6 repeat repeat;
+	-webkit-border-image: url(../img/slices/border_slice_v.png) 0 0 0 6 repeat repeat;
+	-o-border-image: url(../img/slices/border_slice_v.png) 0 0 0 6 repeat repeat;
+	border-image: url(../img/slices/border_slice_v.png) 0 0 0 6 repeat repeat;
+	border-color: #f4be52; border-style: inset; border-width: 6px;
+	
 	margin-left:130px !important;
 }
 #mbr_sidebar h4 {
-	border-top:3px ridge #dfe3e5;
+	-moz-border-image: url(../img/slices/border_slice_h.png) 6 0 0 0 repeat repeat;
+	-webkit-border-image: url(../img/slices/border_slice_h.png) 6 0 0 0 repeat repeat;
+	-o-border-image: url(../img/slices/border_slice_h.png) 6 0 0 0 repeat repeat;
+	border-image: url(../img/slices/border_slice_h.png) 6 0 0 0 repeat repeat;
+	border-color: #f4be52; border-style: inset; border-width: 6px;
+
 	padding:5px 0 10px 20px;
+	margin-left:-6px;
 	text-align:left;
 	max-width:220px;	
 }
 #mbr_sidebar h4:first-child {
-	margin-top:20px;	
+	margin-top:15px;	
 }
 .news_mbr {
 	overflow:hidden;	
@@ -784,12 +804,14 @@ body {
 .news_mbr .img, .news_mbr h4 {
 	float:left;	
 }
+/*==== Member sidebar bubble-quote styles ====*/
 .bubble_2_right p, .bubble_2_left p {
-	font-size:10px;
+	font-size:11px;
 	line-height:1.2em;
 	font-style:italic;
 	width:200px;
-	margin-left:10px;
+	margin-left:12px;
+	color:#132c40;
 }
 .bubble_2_right .regarding, .bubble_2_left .regarding {
 	font-weight:bold;
@@ -799,7 +821,8 @@ body {
 .bubble_2_right .person, .bubble_2_left .person {
 	color:#434f5e;
 	text-align:right;
-	margin:0;
+	margin:-5px 0 0 0;
+	color:#872501;	
 }
 .bubble_2_right, .bubble_2_left {
 	width:214px;
