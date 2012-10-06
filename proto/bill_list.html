@@ -50,7 +50,7 @@
       <p class="bill_def">Bills are the most common form of proposals for laws. They require approval from both the House and Senate, as well as the President's signature, in order to become laws. Below is each bill's official title, a link to a page with its full details, and its current status in Congress.</p>
     </div>
     <div id="sortable" class="span5 bill_sort">
-      <p>Filter Results:</p>
+      <p>Filter Bills:</p>
       <div class="sort_btns btn-toolbar"> <a href="bill_list.html" class="btn btn-small">All Bills</a>
         <div class="btn-group"> <a class="btn dropdown-toggle btn-small" data-toggle="dropdown" href="#">Senate Bills <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -69,12 +69,11 @@
           </ul>
         </div>
       </div>
-      <p>Sort Results:</p>
+      <p>Sort Bills:</p>
       <div class="btn-group sortby" data-toggle="buttons-radio">
-        <button type="button" class="btn">Views</button>
-        <button type="button" class="btn">Popular</button>
-        <button type="button" class="btn">Stalled</button>
-        <button type="button" class="btn">Rushed</button>
+        <button type="button" class="btn active">Views</button>
+        <button type="button" class="btn">Popularity</button>
+        <button type="button" class="btn">Introduced Date</button>
       </div>
     </div>
   </div>
@@ -90,7 +89,7 @@
 <div id="topcontent" class="container">
   <div id="news" class="span10">
     <div class="module bill"> <a href="#" title="View this member >>">
-      <div class="bill_photo"> <!-- Img applied via CSS --> </div>
+      <div class="bill_photo passed"> <!-- Img applied via CSS --> </div>
       <h3>Bill Number and Common Title</h3>
       <p>Littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas. Facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent. Sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu. Qui nunc nobis videntur parum clari fiant sollemnes in. Suscipit lobortis nisl ut aliquip ex ea commodo.</p>
       </a>
@@ -106,7 +105,7 @@
       <div class="star_split xl"> <!-- Img applied via CSS --> </div>
   </div>  
     <div class="module bill"> <a href="#" title="View this member >>">
-      <div class="bill_photo"> <!-- Img applied via CSS --> </div>
+      <div class="bill_photo veto"> <!-- Img applied via CSS --> </div>
       <h3>Bill Number and Common Title</h3>
       <p>Littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas. Facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent. Sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu. Qui nunc nobis videntur parum clari fiant sollemnes in. Suscipit lobortis nisl ut aliquip ex ea commodo.</p>
       </a>
@@ -122,7 +121,7 @@
       <div class="star_split xl"> <!-- Img applied via CSS --> </div>
   </div>  
     <div class="module bill"> <a href="#" title="View this member >>">
-      <div class="bill_photo"> <!-- Img applied via CSS --> </div>
+      <div class="bill_photo stall"> <!-- Img applied via CSS --> </div>
       <h3>Bill Number and Common Title</h3>
       <p>Littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas. Facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent. Sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu. Qui nunc nobis videntur parum clari fiant sollemnes in. Suscipit lobortis nisl ut aliquip ex ea commodo.</p>
       </a>
@@ -138,7 +137,7 @@
       <div class="star_split xl"> <!-- Img applied via CSS --> </div>
   </div>  
     <div class="module bill"> <a href="#" title="View this member >>">
-      <div class="bill_photo"> <!-- Img applied via CSS --> </div>
+      <div class="bill_photo rush"> <!-- Img applied via CSS --> </div>
       <h3>Bill Number and Common Title</h3>
       <p>Littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas. Facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent. Sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu. Qui nunc nobis videntur parum clari fiant sollemnes in. Suscipit lobortis nisl ut aliquip ex ea commodo.</p>
       </a>
@@ -153,70 +152,6 @@
       </div>
       <div class="star_split xl"> <!-- Img applied via CSS --> </div>      
   </div>
-    <div class="module bill"> <a href="#" title="View this member >>">
-      <div class="bill_photo"> <!-- Img applied via CSS --> </div>
-      <h3>Bill Number and Common Title</h3>
-      <p>Littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas. Facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent. Sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu. Qui nunc nobis videntur parum clari fiant sollemnes in. Suscipit lobortis nisl ut aliquip ex ea commodo.</p>
-      </a>
-      <div class="status">
-        <p class="label label-success">Passed</p>
-      </div>
-      <div class="introduced">
-        <p>Bill Introduced: XX-XX-XXXX</p>
-      </div>      
-      <div class="stats">
-        <p class="label label-info">30 Views | 20 Comments</p>
-      </div>
-      <div class="star_split xl"> <!-- Img applied via CSS --> </div>
-  </div>  
-    <div class="module bill"> <a href="#" title="View this member >>">
-      <div class="bill_photo"> <!-- Img applied via CSS --> </div>
-      <h3>Bill Number and Common Title</h3>
-      <p>Littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas. Facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent. Sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu. Qui nunc nobis videntur parum clari fiant sollemnes in. Suscipit lobortis nisl ut aliquip ex ea commodo.</p>
-      </a>
-      <div class="status">
-        <p class="label label-important">Vetoed</p>
-      </div>
-      <div class="introduced">
-        <p>Bill Introduced: XX-XX-XXXX</p>
-      </div>      
-      <div class="stats">
-        <p class="label label-info">30 Views | 20 Comments</p>
-      </div>
-      <div class="star_split xl"> <!-- Img applied via CSS --> </div>
-  </div>  
-    <div class="module bill"> <a href="#" title="View this member >>">
-      <div class="bill_photo"> <!-- Img applied via CSS --> </div>
-      <h3>Bill Number and Common Title</h3>
-      <p>Littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas. Facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent. Sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu. Qui nunc nobis videntur parum clari fiant sollemnes in. Suscipit lobortis nisl ut aliquip ex ea commodo.</p>
-      </a>
-      <div class="status">
-        <p class="label label-warning">Stalled</p>
-      </div>
-      <div class="introduced">
-        <p>Bill Introduced: XX-XX-XXXX</p>
-      </div>      
-      <div class="stats">
-        <p class="label label-info">30 Views | 20 Comments</p>
-      </div>
-      <div class="star_split xl"> <!-- Img applied via CSS --> </div>
-  </div>  
-    <div class="module bill"> <a href="#" title="View this member >>">
-      <div class="bill_photo"> <!-- Img applied via CSS --> </div>
-      <h3>Bill Number and Common Title</h3>
-      <p>Littera gothica quam nunc putamus parum claram, anteposuerit litterarum formas. Facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent. Sit amet consectetuer adipiscing elit sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam. Dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu. Qui nunc nobis videntur parum clari fiant sollemnes in. Suscipit lobortis nisl ut aliquip ex ea commodo.</p>
-      </a>
-      <div class="status">
-        <p class="label label-info">Rushed</p>
-      </div>
-      <div class="introduced">
-        <p>Bill Introduced: XX-XX-XXXX</p>
-      </div>      
-      <div class="stats">
-        <p class="label label-info">30 Views | 20 Comments</p>
-      </div>
-      <div class="star_split xl"> <!-- Img applied via CSS --> </div>      
-  </div>  
 </div>
 <div id="mbr_sidebar" class="span4 offset1">
   <h4>What People are Saying</h4>
