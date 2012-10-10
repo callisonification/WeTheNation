@@ -1291,6 +1291,14 @@ a.gld {
 	-webkit-box-shadow: 0px 1px 2px 0px #555;
 	box-shadow: 0px 1px 2px 0px #555;
 }
+#add_comment img {
+	float:left;
+	border: 2px groove #dfe3e5;
+	
+	/*== drop shadow ==*/
+	-webkit-box-shadow: 0px 1px 2px 0px #555;
+	box-shadow: 0px 1px 2px 0px #555;	
+}
 .mbr_detail_sidebar h5 {
 	font-size:18px;
 	margin-left:20px;
@@ -1322,7 +1330,7 @@ a.gld {
 #add_comment form {
 	margin:0;	
 }
-#add_comment textarea {
+#add_comment textarea, .inline_comment textarea {
 	width:98%;
 	min-height:50px;
 	max-width:500px;
@@ -1332,9 +1340,25 @@ a.gld {
 	box-shadow:none;
 	color:#585140;
 }
+.inline_comment {
+	display:none;	
+}
+.inline_comment textarea {
+	margin-top:20px;
+	border:1px groove #7e796c;
+	background-image:url(../img/slices/body_bg_06.png);
+}
+.inline_comment input {
+	margin-left:390px;
+	margin-top:5px;
+}
+.inline_comment a {
+	float:right;
+	margin-top:6px;	
+}
 #add_comment input {
 	margin:10px auto;
 }
 #add_comment .submit {
-	margin-left:470px;	
+	margin-left:365px;	
 }

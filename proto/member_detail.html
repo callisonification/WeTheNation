@@ -100,6 +100,13 @@
           <p>this is another nested comment</p>
         </div>
         <p class="add_comment"><a href="#">Leave a comment +</a></p>
+        <div class="inline_comment">
+        	<form name="inline_comment_form" method="post" action="?">
+            	<textarea role="3" cols="50" placeholder="Add comment"></textarea>
+                <input type="submit" value="Submit">
+                <a href="">Cancel</a>
+            </form>
+        </div>
       </div>
     </div>
     <div class="user_comment"> <img src="img/slices/mbr.jpg">
@@ -111,6 +118,7 @@
     </div>
     <div id="comment_splitter"></div>
     <div id="add_comment">
+      <img src="img/slices/mbr.jpg">
       <div class="comment_hook"> <!-- Img applied via CSS --></div>
       <div class="user_master_comment">
       	<form name="mbr_comment_form" method="post" action="?">
