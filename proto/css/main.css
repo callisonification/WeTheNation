@@ -79,14 +79,25 @@ body {
 .stall {
 	background-image: url(../img/slices/bill_icons/stalled_bill_icon.png);
 }
-.senbill {
-	background-image: url(../img/slices/bill_icons/senate_bill_icon.png);
+.stock {
+	background-image: url(../img/slices/bill_icons/new_bill_03.png);
 }
-.hosbill {
-	background-image: url(../img/slices/bill_icons/house_bill_icon.png);
+.bill_num {
+	font-size:10px;
+	font-weight:bold;
+	width:100px !important;
+	margin-left:6px !important;
+	color:#132c40;
+	text-shadow: 0px 1px 1px #fff;		
 }
-.hotbill {
-	background-image: url(../img/slices/bill_icons/hot_bill_icon.png);
+.bill_name {
+	width:80px !important;
+	font-size:20px;
+	font-weight:bold;
+	margin-left:5px !important;
+	margin-top:48px !important;	
+	color:#872501;
+	text-shadow: 0px 1px 1px #fff;	
 }
 /*== member icon properties ==*/
 .side_mbr.mbr_photo {
@@ -271,7 +282,7 @@ body {
 	margin-top: 25px;
 }
 .news {
-	margin: -10px 0 10px 0;
+	margin: -20px 0 10px 0;
 	overflow: hidden;
 }
 .news h3, .mbr h3, .bill h3 {
@@ -300,10 +311,10 @@ body {
 .star_split {
 	width: 580px;
 	height: 29px;
-	background-image: url(../img/slices/star_splitter_13.png);
+	background-image: url(../img/slices/new_star_split.png);
 	background-repeat: no-repeat;
 	margin-left: 100px;
-	margin-top: -10px;
+	margin-top: -5px;
 	float: left;
 }
 .pagination {
@@ -463,7 +474,6 @@ body {
 	margin: 10px 0 10px 0;
 }
 #aboutus p {
-	text-align: justify;
 	margin-bottom: 25px;
 	line-height: 1.75em;
 	color: #132c40;
@@ -479,24 +489,24 @@ body {
 	margin-bottom: 15px;
 }
 .bubble_right {
-	width: 276px;
-	height: 129px;
+	width: 277px;
+	height: 161px;
 	background-image: url(../img/slices/new_bubble_right.png);
 	background-repeat: no-repeat;
 }
 .bubble_left {
 	width: 276px;
-	height: 129px;
+	height: 161px;
 	background-image: url(../img/slices/new_bubble_left.png);
 	background-repeat: no-repeat;
-	margin: 35px 0;
+	margin: 20px 0;
 }
 #quotes p {
 	font-size: 12px;
 	font-style: italic;
 	width: 250px;
 	margin: 0 auto;
-	padding-top: 10px;
+	padding-top: 20px;
 	color: #132c40;
 	text-shadow: 0px 1px 1px #999;
 	font-weight: 500;
@@ -1076,7 +1086,7 @@ body {
 	width: 695px;
 	height: 265px;
 	float: left;
-	margin: 25px 35px 25px 135px;
+	margin: 25px 35px 25px 55px;
 	background-image: url(../img/slices/sidebar_bg_03.png);
 	
 	/*== border radius ==*/
@@ -1131,6 +1141,7 @@ body {
 }
 #mbr_rating_container {
 	width:335px;
+	padding-left:35px;
 }
 #mbr_rating_container h3 {
 	text-align:center;
@@ -1241,13 +1252,13 @@ a.gld {
 	box-shadow: inset 0px 1px 3px 0px #4d4b45;	
 }
 .comment_hook {
-	width:40px;
-	height:46px;
-	background-image:url(../img/slices/bubble_hook_03.png);
+	width:25px;
+	height:29px;
+	background-image:url(../img/slices/bubble_hook.png);
 	background-repeat:no-repeat;
 	position:absolute;
 	z-index:1;
-	margin:40px 0 0 119px;
+	margin:40px 0 0 134px;
 }
 .nested_comment {
 	width:400px;
@@ -1322,9 +1333,9 @@ a.gld {
 	color:#872501;	
 }
 #comment_splitter {
-	width:115%;
-	background-image:url(../img/slices/border_slice_h.png);
+	width:100%;
 	height:6px;
+	border-top:1px solid #ddd;
 	margin:50px auto 20px auto;	
 }
 #add_comment form {
@@ -1360,5 +1371,8 @@ a.gld {
 	margin:10px auto;
 }
 #add_comment .submit {
-	margin-left:365px;	
+	margin-left:415px;	
+}
+#add_comment .reset {
+	margin-top:15px;	
 }
