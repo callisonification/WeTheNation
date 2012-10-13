@@ -68,16 +68,16 @@ body {
 }
 /*== bill icon properties ==*/
 .passed {
-	background-image: url(../img/slices/bill_icons/passed_bill_icon.png);
+	background-image: url(../img/slices/bill_icons/new_bill_passed_03.png);
 }
 .veto {
-	background-image: url(../img/slices/bill_icons/veto_bill_icon.png);
+	background-image: url(../img/slices/bill_icons/new_bill_veto_03.png);
 }
 .rush {
-	background-image: url(../img/slices/bill_icons/rushed_bill_icon.png);
+	background-image: url(../img/slices/bill_icons/new_bill_rushed_03.png);
 }
 .stall {
-	background-image: url(../img/slices/bill_icons/stalled_bill_icon.png);
+	background-image: url(../img/slices/bill_icons/new_bill_stalled_03.png);
 }
 .stock {
 	background-image: url(../img/slices/bill_icons/new_bill_03.png);
@@ -99,6 +99,9 @@ body {
 	color:#872501;
 	text-shadow: 0px 1px 1px #fff;	
 }
+.bill .bill_num, .bill .bill_name {
+	margin-top:0px;	
+}
 /*== member icon properties ==*/
 .side_mbr.mbr_photo {
 	background-image: url(../img/slices/mbr_small.jpg);
@@ -108,14 +111,17 @@ body {
 }
 /*== sidebar bill icon properties ==*/
 .side_bill.senbill {
-	background-image: url(../img/slices/bill_icons/senate_bill_icon_sm.png);
+	background-image: url(../img/slices/bill_icons/senbill_sm_07.png);
+	background-repeat:no-repeat;
 }
 .side_bill.hosbill {
-	background-image: url(../img/slices/bill_icons/house_bill_icon_sm.png);
+	background-image: url(../img/slices/bill_icons/hosbill_sm_07.png);
+	background-repeat:no-repeat;	
 }
 .side_bill.hotbill {
 	background-image: url(../img/slices/bill_icons/hot_bill_icon_sm.png);
 }
+/*== title class properties ==*/
 .bl_title {
 	color: #132c40;
 	text-shadow: 0px 1px 1px #fff,  0px 1px 1px #fff,  0px 1px 1px #fff,  0px 1px 1px #000,  0px 1px 1px #000,  0px 1px 1px #000;
@@ -311,7 +317,7 @@ body {
 .star_split {
 	width: 580px;
 	height: 29px;
-	background-image: url(../img/slices/new_star_split.png);
+	background-image: url(../img/slices/new_star_split_03.png);
 	background-repeat: no-repeat;
 	margin-left: 100px;
 	margin-top: -5px;
@@ -341,10 +347,10 @@ body {
 	margin: 0 auto;
 }
 .side_bill {
-	width: 75px;
+	width: 65px;
 	height: 75px;
 	float: left;
-	margin: 5px;
+	margin: 10px;
 }
 #sidebar_members, #sidebar_bills {
 	margin: 18px 0;
@@ -380,19 +386,24 @@ body {
 	color: #132c40;
 	text-shadow: 0px 1px 1px #fff;
 }
-.mbrholder span, .billholder span {
-	float: right;
-	margin-top: -28px;
+.mbrholder span {
+	float:left;
+	margin-top: 0px;
 }
 .billholder span {
-	margin-top: -32px;
+	float:left;
+	margin-top: 10px;
 }
-.mbrholder span p, .billholder span p {
+.mbrholder span p {
 	width: 70px;
 	color: #a09374;
 }
+.billholder span p {
+	width: 100px;
+	color: #a09374;
+}
 .billholder p {
-	margin: 22px 0 -10px 0;
+	margin-top: 10px;
 }
 .side_mbr {
 	width: 40px !important;
@@ -400,7 +411,7 @@ body {
 	margin: 20px 15px;
 }
 .side_mbr.mbr_photo {
-	margin: 10px 15px;
+	margin: 10px;
 	box-shadow: none;
 }
 /*==== filter button styles ====*/
@@ -478,6 +489,7 @@ body {
 	line-height: 1.75em;
 	color: #132c40;
 	text-shadow: 0px 1px 1px #fff;
+	width:325px;
 }
 /*==== Quote styles ====*/
 #quotes {
@@ -768,13 +780,13 @@ body {
 }
 .star_split.xl {
 	width: 710px;
-	background-image: url(../img/slices/star_splitter_xl.png);
+	background-image: url(../img/slices/new_star_split_xl_03.png);
 	background-repeat: no-repeat;
 	margin: 0;
 	float: left;
 }
 /*==== Member module styles ====*/
-.mbr_photo, .bill_photo {
+.mbr_photo {
 	width: 95px;
 	height: 115px;
 	background-repeat: no-repeat;
@@ -785,13 +797,16 @@ body {
 	-webkit-box-shadow: 0px 1px 5px 0px #555;
 	box-shadow: 0px 1px 5px 0px #555;
 }
+.mbr .xl {
+	margin-bottom:20px;	
+}
 .mbr h3, .bill h3 {
 	float: left;
 	margin: -10px 0 0px 15px;
 }
 .bill p {
 	float: left;
-	margin: -8px 0 10px 15px;
+	margin: -8px 0 10px 25px;
 }
 .bill .stats a {
 	color:#fff;	
@@ -1014,16 +1029,17 @@ body {
 }
 /*==== Bill module styles ====*/
 .bill h3 {
-	margin: 5px 0 0px -95px;
+	margin: 5px 0 0px -85px;
 }
 .bill p {
 	margin: 10px 15px;
 }
 .bill_photo {
-	border: none;
-	box-shadow: none;
-	margin: 55px 2px 0 -2px;
+	width:77px;
+	height:100px;
+	margin: 55px 2px 0 8px;
 	height: 100px;
+	float:left;
 }
 .status {
 	float: left;
@@ -1082,11 +1098,11 @@ body {
 	height: 315px;
 	overflow:hidden;
 }
-.mbr_detail_container {
+.mbr_detail_container, .bill_detail_container {
 	width: 695px;
 	height: 265px;
 	float: left;
-	margin: 25px 35px 25px 55px;
+	margin: 25px 35px 25px 45px;
 	background-image: url(../img/slices/sidebar_bg_03.png);
 	
 	/*== border radius ==*/
@@ -1139,11 +1155,11 @@ body {
 	-webkit-border-radius: 5px;
 	border-radius: 5px;	
 }
-#mbr_rating_container {
+#mbr_rating_container, #bill_rating_container {
 	width:335px;
 	padding-left:35px;
 }
-#mbr_rating_container h3 {
+#mbr_rating_container h3, #bill_rating_container h3 {
 	text-align:center;
 	margin-top:20px;
 	color:#132c40;
@@ -1227,6 +1243,13 @@ a.gld {
 	text-align:center;
 	width:250px;
 	margin-top:0;
+}
+#comment_heading .star_heading_left {
+	margin:20px 15px;	
+}
+#comment_heading .star_heading_right {
+	float:right;
+	margin:-40px 60px 20px 15px;	
 }
 .user_comment {
 	margin:15px 0;	
@@ -1335,7 +1358,6 @@ a.gld {
 #comment_splitter {
 	width:100%;
 	height:6px;
-	border-top:1px solid #ddd;
 	margin:50px auto 20px auto;	
 }
 #add_comment form {
@@ -1375,4 +1397,81 @@ a.gld {
 }
 #add_comment .reset {
 	margin-top:15px;	
+}
+.bill_detail_container h3, .bill_detail_container p {
+	margin:10px;
+}
+.bill_detail_container p {
+	overflow:hidden;
+	max-height:145px;	
+}
+.secondary_info {
+	width:675px;
+	position:absolute;
+	bottom:30px;
+	margin:10px;
+}
+.secondary_info button {
+	float:left;
+	margin:0 8px 0 0;
+}
+.secondary_info p {
+	width:150px;
+	float:left;
+	margin:0;
+}
+.secondary_info p {
+	width:100px;
+	margin:0 10px 0 30px;
+	background-image: url(../img/slices/body_bg_06.png);
+	text-align: center;
+	padding: 4px 8px;
+	color: #132c40;
+	
+	/*== border radius ==*/
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	
+	/*== inner shadow ==*/
+	-webkit-box-shadow: inset 0px 1px 5px 0px #888;
+	box-shadow: inset 0px 1px 5px 0px #888;		
+}
+.bill_follow {
+	margin-left:75px !important;
+}
+#bill_rating_container a {
+	float:left;	
+}
+#bill_rating_container p {
+	font-size:25px;
+	font-weight:50;
+	width:100px;
+	float:left;
+	margin:25px 30px;	
+	color:#fffad8;
+	text-shadow: 0px 1px 1px #555;	
+}
+.thumbup, .thumbdown {
+	display:block;
+	width:89px;
+	height:89px;
+	text-indent:-9999px;
+	margin:0 38px;
+	background-image:url(../img/slices/thumb_up_06.png);
+	background-repeat:no-repeat;
+	background-position:top center;
+}
+.thumbdown {
+	background-image:url(../img/slices/thumb_down_08.png);
+}
+.thumbup:hover, .thumbdown:hover {
+	background-position:center center;	
+}
+.thumbup:active, .thumbdown:active {
+	background-position:bottom center;	
+}
+.approval_rating, .disapproval_rating {
+	width:80px !important;
+	margin:25px 25px 25px 55px !important;
+	font-size:40px !important;
 }
