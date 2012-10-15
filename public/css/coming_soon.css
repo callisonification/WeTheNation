@@ -71,7 +71,7 @@ img {
 	background-image: url(../img/slices/blue_stripe.png);
 	background-repeat: repeat-x;
 	border-bottom: 3px ridge #ffcc3c;
-	min-height:30px;
+	min-height:35px;
 	
 	/*== drop shadow ==*/
 	-webkit-box-shadow: 0px 2px 5px 0px #132c40;
