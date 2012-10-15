@@ -1,0 +1,83 @@
+@charset "UTF-8";
+/* 
+CSS Document 
+coming soon page CSS
+author : Chris Allison
+created : 10-15-2012
+*/
+body {
+	background-image:url(../img/slices/banner_bg_03.png);
+	font-family:Arial, Helvetica, sans-serif;
+	margin:0;
+	padding:0;	
+}
+h1 {
+	font-size:100px;
+	text-align:center;
+	color: #132c40;
+	text-shadow: 0px 1px 1px #fff,  0px 1px 1px #fff,  0px 1px 1px #fff,  0px 1px 1px #000,  0px 1px 1px #000,  0px 1px 1px #000;
+	filter: dropshadow(color=#000, offx=0, offy=1);
+	margin-top:0px;
+}
+img {
+	display:block;	
+	margin:0 auto;
+	margin-top:-50px;
+}
+.slogan {
+	margin-top:-20px;	
+}
+#connect h6 {
+	font-size:20px;
+	color:#fff;
+	text-align: center;
+	text-shadow: 0px 1px 1px #000;	
+}
+#badges {
+	overflow: hidden;
+	width:300px;
+	margin:0 auto;
+	margin-top:-30px;
+	margin-bottom:55px;
+}
+#badges li {
+	list-style-type: none;
+}
+#badges li a {
+	display: block;
+	height: 75px;
+	width: 75px;
+	float: left;
+	margin: 0 5px;
+	text-indent: -9999px;
+}
+#badges li a:hover {
+	background-position: bottom center;
+}
+#fb {
+	background-image: url(../img/slices/social_badge_03.png);
+	background-repeat: no-repeat;
+}
+#tw {
+	background-image: url(../img/slices/social_badge_05.png);
+	background-repeat: no-repeat;
+}
+#gh {
+	background-image: url(../img/slices/social_badge_07.png);
+	background-repeat: no-repeat;
+}
+.split {
+	width: 100%;
+	background-image: url(../img/slices/blue_stripe.png);
+	background-repeat: repeat-x;
+	border-bottom: 3px ridge #ffcc3c;
+	min-height:20px;
+	
+	/*== drop shadow ==*/
+	-webkit-box-shadow: 0px 2px 5px 0px #132c40;
+	box-shadow: 0px 2px 5px 0px #132c40;
+}
+.foot {
+	border-bottom:none;
+	border-top: 3px ridge #ffcc3c;
+}
