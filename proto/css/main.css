@@ -57,8 +57,8 @@ body {
   from { -moz-transform: rotate(0deg); }
   to { -moz-transform: rotate(360deg); }
 }
-*/
-@-ms-keyframes spin {
+
+*/@-ms-keyframes spin {
 	 from {
 	-ms-transform: rotate(0deg);
 	}
@@ -917,6 +917,9 @@ body {
 	border-width: 6px;
 	margin-left: 130px !important;
 }
+.marginfix {
+	margin-top:-45px;	
+}
 #mbr_sidebar h4 {
 	-moz-border-image: url(../img/slices/border_slice_h.png) 6 0 0 0 repeat repeat;
 	-webkit-border-image: url(../img/slices/border_slice_h.png) 6 0 0 0 repeat repeat;
@@ -1134,6 +1137,7 @@ body {
 	margin-top: -10px;
 	color:#132c40;
 	font-weight:500;
+	width:70%;
 }
 .mbr_info_stats {
 	margin-left:-5px;
@@ -1399,17 +1403,17 @@ a.gld {
 	margin-top:15px;	
 }
 .bill_detail_container h3, .bill_detail_container p {
-	margin:10px;
+	margin:10px 20px;
 }
 .bill_detail_container p {
 	overflow:hidden;
-	max-height:145px;	
+	max-height:140px;	
 }
 .secondary_info {
 	width:675px;
 	position:absolute;
 	bottom:30px;
-	margin:10px;
+	margin:10px 20px;
 }
 .secondary_info button {
 	float:left;
@@ -1437,8 +1441,11 @@ a.gld {
 	box-shadow: inset 0px 1px 5px 0px #888;		
 }
 .bill_follow {
-	margin-left:75px !important;
+	margin-left:55px !important;
 }
+#bill_rating_container {
+	padding-left:20px;
+}	
 #bill_rating_container a {
 	float:left;	
 }
@@ -1472,6 +1479,9 @@ a.gld {
 }
 .approval_rating, .disapproval_rating {
 	width:80px !important;
-	margin:25px 25px 25px 55px !important;
+	margin:25px 35px 25px 50px !important;
 	font-size:40px !important;
+}
+.dashboard {
+	margin-top:35px;	
 }
