@@ -1,5 +1,5 @@
 <div id="footer_content">
-  <div class="container"> <img src="img/slices/alt_logo_16.png" alt="WeTheNation"/>
+  <div class="container"> <img src="<?php echo base_url('img/slices/alt_logo_16.png'); ?>" alt="WeTheNation"/>
     <div class="span2 footfix">
       <h6>WeTheNation:</h6>
       <ul class="footerlinks">
@@ -13,11 +13,11 @@
     <div class="span2 footfix2">
       <h6>Go To:</h6>
       <ul class="footerlinks">
-        <li><a href="#" title="View all Bills">All Bills</a></li>
-        <li><a href="#" title="View Senate Bills">Senate bills</a></li>
-        <li><a href="#" title="View Senate Members">Senate Members</a></li>
-        <li><a href="#" title="View House Bills">House bills</a></li>
-        <li><a href="#" title="View House Members">House Members</a></li>
+        <li><a href="<?php echo site_url('bill_list');?>" title="View all Bills">All Bills</a></li>
+        <li><a href="<?php echo site_url('bill_list/senate_bills');?>" title="View Senate Bills">Senate bills</a></li>
+        <li><a href="<?php echo site_url('member_list/senate_members');?>" title="View Senate Members">Senate Members</a></li>
+        <li><a href="<?php echo site_url('bill_list/house_bills');?>" title="View House Bills">House bills</a></li>
+        <li><a href="<?php echo site_url('member_list/house_members');?>" title="View House Members">House Members</a></li>
       </ul>
     </div>
     <div class="span4 offset1" id="connect">
@@ -47,6 +47,6 @@
 <!-- JQUERY SCRIPT -->
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <!-- Bootstrap plugin -->
-<script src="js/bootstrap.min.js"></script>
+<script src="<?php echo base_url('js/bootstrap.min.js');?>"></script>
 <!-- Custom Plugins -->
 </html>

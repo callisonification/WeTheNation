@@ -13,7 +13,7 @@
   <div class="container">
     <div id="tsInfo" class="row">
       <p class="span9 offset1">Site News :: The Build Begins! Site construciton has started, 8 weeks til launch!</p>
-      <p class="span2 offset4"><a href="user_dashboard.html" title="Sign In">Sign In</a> <span> | </span> <a href="#" title="Sign Up">Sign Up</a></p>
+      <p class="span2 offset4"><a href="#" title="Sign In">Sign In</a> <span> | </span> <a href="#" title="Sign Up">Sign Up</a></p>
     </div>
   </div>
 </div>
