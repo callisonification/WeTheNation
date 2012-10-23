@@ -38,7 +38,7 @@
 <div id="midsplit">
   <div class="container">
     <ul class="breadcrumb">
-      <li><a href="index.html">Home</a><span class="divider"> / </span></li>
+      <li><a href="<?php echo base_url(); ?>">Home</a><span class="divider"> / </span></li>
       <li class="active">All Bills</li>
     </ul>
   </div>

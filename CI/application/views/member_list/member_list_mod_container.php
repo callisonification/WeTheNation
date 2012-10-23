@@ -1,6 +1,6 @@
 <div id="topcontent" class="container">
   <div id="news" class="span10">
-    <div class="module mbr"> <a href="member_detail.html" title="View this member >>">
+    <div class="module mbr"> <a href="<?php echo site_url('member_detail/get_details'); ?>" title="View this member >>">
       <div class="mbr_photo"> <!-- Img applied via CSS --> </div>
       <h3 class="bl_title">Member Name</h3>
       <h5 class="bl_title">[Republican]</h5>

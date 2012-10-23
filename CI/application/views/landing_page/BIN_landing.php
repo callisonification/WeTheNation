@@ -10,7 +10,7 @@
       	<p class="bill_num">S. 3456</p>
         <p class="bill_name">Senate</p>
       </div>
-      <a href="#" title="View this bill >>">
+      <a href="<?php echo site_url('bill_detail/get_details'); ?>" title="View this bill >>">
       <h3 class="bl_title">Bill Common Title</h3>
       <p>Sed diam nonummy nibh euismod, tincidunt ut laoreet dolore? Usus legentis in iis qui facit eorum claritatem Investigationes demonstraverunt lectores legere. Aliquam erat volutpat ut wisi enim ad minim veniam quis nostrud!</p>
       </a>

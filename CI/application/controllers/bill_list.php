@@ -13,7 +13,7 @@ class Bill_List extends CI_Controller {
 	}
 	
 	function senate_bills() {
-	
+		
 		//load same views from above, pass in data attribute of just senate bills
 		echo 'senate bills';
 		

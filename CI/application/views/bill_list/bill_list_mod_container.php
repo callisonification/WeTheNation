@@ -2,7 +2,7 @@
   <div id="news" class="span10">
   
   	<!-- Begin bill module -->
-    <div class="module bill"> <a href="bill_detail.html" title="View this member >>">
+    <div class="module bill"> <a href="<?php echo site_url('bill_detail/get_details'); ?>" title="View this member >>">
       <div class="bill_photo passed"> <!-- Img applied via CSS --> 
       	<p class="bill_num">S. 123</p>
         <p class="bill_name">Senate</p>
