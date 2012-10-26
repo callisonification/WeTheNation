@@ -11,7 +11,6 @@ class Account extends CI_Controller {
 		$this->load->model('account_model');
 		//load model for fetching zip info here
 		
-		$this->_salt = 'qwerty54321';
 		
 	}//end account function
 	
