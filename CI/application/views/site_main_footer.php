@@ -48,5 +48,7 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <!-- Bootstrap plugin -->
 <script src="<?php echo base_url('js/bootstrap.min.js');?>"></script>
+<script src="<?php echo base_url('js/main.js');?>"></script>
+<script src="<?php echo base_url('js/jquery_scrollTo.1.4.3.min.js');?>"></script>
 <!-- Custom Plugins -->
 </html>

@@ -4,6 +4,8 @@ class Landing extends CI_Controller {
 
 	public function index(){		
 			
+			$this->load->helper('form');
+			
 			$this->load->view('landing_page/landing_header.php');
 			$this->load->view('landing_page/landing_nav.php');
 			$this->load->view('landing_page/branding.php');

@@ -154,6 +154,25 @@ body {
 	font-weight: bold;
 	margin: 0 5px;
 }
+/*==== Sign in form styles ====*/
+.popover {
+	width:250px;
+	background-image:url(../img/slices/body_bg_06.png);
+}
+.popover-title {
+	background-image:url(../img/slices/blue_stripe.png);
+	color: #dfe3e5;
+	font-weight:500;
+}
+.popover-content a {
+	position:absolute;
+	margin-top:8px;
+	margin-left:30px;
+}
+.popover-content form label {
+	color:#132c40;
+	font-weight:500;	
+}
 /*==== Nav Bar styles ====*/
 .navbar-search {
 	margin: 0;
@@ -196,7 +215,9 @@ body {
 	position: relative;
 	z-index: 0;
 	top: -50px;
+	
 	/*=== Spin effect code ===*/
+	
    /* webkit chrome, safari, mobile */
 	-webkit-animation-name: spin;
 	-webkit-animation-duration: 20000ms; /* 20 seconds */
