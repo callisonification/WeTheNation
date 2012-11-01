@@ -15,7 +15,7 @@ class Curl_calls extends CI_Controller {
 			
 			$this->curl_model->get_gt_bills($i);
 			
-			//echo 'offsetting' . $i;
+			//echo 'page '.$i.' loaded'.'<br>';
 			
 		}//end loop
 		
@@ -28,10 +28,36 @@ class Curl_calls extends CI_Controller {
 			
 			$this->curl_model->get_gt_members($i);
 			
-			//echo 'offsetting' . $i;
+			//echo 'page '.$i.' loaded'.'<br>';
 			
 		}//end loop
 			
 	}//end get Govtrack members function
+	
+	function get_oc_bills() {
+		
+		$this->load->model('curl_model');
+		for($i=1; $i<=399; $i++){
+					
+			$this->curl_model->get_oc_bills($i);
+			
+			//echo 'page '.$i.' loaded'.'<br>';
+				
+		}//end for loop
+	
+	}//end get_oc_bills function
+		
+	function get_oc_members() {
+		
+		$this->load->model('curl_model');
+		for($i=1; $i<=1; $i++){
+			
+			$this->curl_model->get_oc_members($i);
+			
+			echo 'page '.$i.' loaded'.'<br>';
+						
+		}//end for loop
+			
+	}//end get_oc_members function - democrats
 		
 }//end curl controller class

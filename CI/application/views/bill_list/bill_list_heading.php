@@ -8,21 +8,21 @@
     </div>
     <div id="sortable" class="span5 bill_sort">
       <p>Filter Bills:</p>
-      <div class="sort_btns btn-toolbar"> <a href="bill_list.html" class="btn btn-small">All Bills</a>
+      <div class="sort_btns btn-toolbar"> <a href="<?=site_url('bill_list');?>" class="btn btn-small">All Bills</a>
         <div class="btn-group"> <a class="btn dropdown-toggle btn-small" data-toggle="dropdown" href="#">Senate Bills <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#" title="View all Senate bills">Senate Bills</a></li>
-            <li><a href="#" title="View Senate Joint Resolutions">Joint Resolutions</a></li>
-            <li><a href="#" title="View Senate Concurrent Resolutions">Concurrent Resolutions</a></li>
-            <li><a href="#" title="View Senate Resolutions">Resolutions</a></li>
+            <li><a href="<?=site_url('bill_list/senate_bills');?>" title="View all Senate bills">Senate Bills</a></li>
+            <li><a href="<?=site_url('bill_list/senate_joint_res_bills');?>" title="View Senate Joint Resolutions">Joint Resolutions</a></li>
+            <li><a href="<?=site_url('bill_list/senate_con_res_bills');?>" title="View Senate Concurrent Resolutions">Concurrent Resolutions</a></li>
+            <li><a href="<?=site_url('bill_list/senate_res_bills');?>" title="View Senate Resolutions">Resolutions</a></li>
           </ul>
         </div>
         <div class="btn-group"> <a class="btn dropdown-toggle btn-small" data-toggle="dropdown" href="#">House Bills <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#" title="View all House bills">House Bills</a></li>
-            <li><a href="#" title="View House Joint Resolutions">Joint Resolutions</a></li>
-            <li><a href="#" title="View House Concurrent Resolutions">Concurrent Resolutions</a></li>
-            <li><a href="#" title="View House Resolutions">Resolutions</a></li>
+            <li><a href="<?=site_url('bill_list/house_bills');?>" title="View all House bills">House Bills</a></li>
+            <li><a href="<?=site_url('bill_list/house_joint_res_bills');?>" title="View House Joint Resolutions">Joint Resolutions</a></li>
+            <li><a href="<?=site_url('bill_list/house_con_res_bills');?>" title="View House Concurrent Resolutions">Concurrent Resolutions</a></li>
+            <li><a href="<?=site_url('bill_list/house_res_bills');?>" title="View House Resolutions">Resolutions</a></li>
           </ul>
         </div>
       </div>
@@ -39,7 +39,25 @@
   <div class="container">
     <ul class="breadcrumb">
       <li><a href="<?php echo base_url(); ?>">Home</a><span class="divider"> / </span></li>
+      <?php if($this->uri->uri_string() === 'bill_list'): ?>
       <li class="active">All Bills</li>
+      <?php elseif($this->uri->uri_string() === 'bill_list/senate_bills'): ?>
+      <li class="active">Senate Bills</li>
+      <?php elseif($this->uri->uri_string() === 'bill_list/senate_joint_res_bills'): ?>
+      <li class="active">Senate Joint Resolutions</li>
+      <?php elseif($this->uri->uri_string() === 'bill_list/senate_con_res_bills'): ?>
+      <li class="active">Senate Concurrent Resolutions</li>
+      <?php elseif($this->uri->uri_string() === 'bill_list/senate_res_bills'): ?>
+      <li class="active">Senate Resolutions</li>
+      <?php elseif($this->uri->uri_string() === 'bill_list/house_bills'): ?>
+      <li class="active">House Bills</li>
+      <?php elseif($this->uri->uri_string() === 'bill_list/house_joint_res_bills'): ?>
+      <li class="active">House Joint Resolutions</li>
+      <?php elseif($this->uri->uri_string() === 'bill_list/house_con_res_bills'): ?>
+      <li class="active">House Concurrent Resolutions</li>
+      <?php elseif($this->uri->uri_string() === 'bill_list/house_res_bills'): ?>
+      <li class="active">House Resolutions</li>      
+      <?php endif; ?>
     </ul>
   </div>
 </div>

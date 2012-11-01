@@ -8,8 +8,8 @@
       <ul class="mbr_info_stats">
         <li><i class="icon-adjust"></i> Total Session Votes : <strong>500</strong></li>
         <li><i class="icon-star"></i> Approval Rating : <strong>50%</strong></li>
-        <li><i class="icon-ok-sign"></i> Approval Rating : <strong>50%</strong></li>
-        <li><i class="icon-ban-circle"></i> Approval Rating : <strong>50%</strong></li>
+        <li><i class="icon-ok-sign"></i> With Party Vote : <strong>50%</strong></li>
+        <li><i class="icon-ban-circle"></i> Abstain Percentage : <strong>50%</strong></li>
       </ul>
       <ul class="mbr_info_contact">
         <li><i class="icon-envelope"></i><a href="#">Email this member</a></li>

@@ -17,5 +17,19 @@ $(document).ready(function(){
 			
 			return false;	
 		});
+		
+		//=====add inner coment action=======//
+		$('.add_comment a').click(function(){
+			$('.inline_comment').css({'display' : 'block'});
+			
+			return false;	
+		});
+		$('.inline_comment a').click(function(){
+			$('.inline_comment').find('textarea').val('');					
+			$('.inline_comment').find('textarea').attr('placeholder', 'Add comment');	
+			$('.inline_comment').css({'display' : 'none'});
+			
+			return false;	
+		});
  });
  //end of JS file

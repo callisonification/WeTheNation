@@ -107,7 +107,11 @@ body {
 	background-image: url(../img/slices/mbr_small.jpg);
 }
 .mbr_photo {
-	background-image: url(../img/slices/mbr.jpg);
+	background-image: url(../img/slices/missing_user.png);
+	width: 98px;
+	height: 118px;
+	background-repeat: no-repeat;
+	float:left;	
 }
 /*== sidebar bill icon properties ==*/
 .side_bill.senbill {
@@ -180,10 +184,6 @@ body {
 }
 .searchbtn {
 	margin: -10px 0 0 5px;
-}
-.form-search:focus {
-	border-color: #d9042b !important;
-	box-shadow: #FFF !important;
 }
 #navsplit {
 	width: 100%;
@@ -807,7 +807,7 @@ body {
 	float: left;
 }
 /*==== Member module styles ====*/
-.mbr_photo {
+.mbr_photo img {
 	width: 95px;
 	height: 115px;
 	background-repeat: no-repeat;
@@ -815,8 +815,8 @@ body {
 	float: left;
 	
 	/*== outer shadow ==*/
-	-webkit-box-shadow: 0px 1px 5px 0px #555;
-	box-shadow: 0px 1px 5px 0px #555;
+	-webkit-box-shadow: 0px 1px 2px 0px #555;
+	box-shadow: 0px 1px 2px 0px #555;
 }
 .mbr .xl {
 	margin-bottom:20px;	
@@ -859,6 +859,9 @@ body {
 .stats {
 	float: right;
 	margin: 50px 90px 0 0;
+}
+.stat_holder {
+	float:left;	
 }
 .mbr ul, .mbr_info_stats, .mbr_info_contact {
 	margin-left: 8px;
