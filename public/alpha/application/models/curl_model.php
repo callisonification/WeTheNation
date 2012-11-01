@@ -140,7 +140,6 @@ class Curl_model extends CI_Model {
 				$billtype = 'H.Con.Res.';
 			}
 			
-			
 //			echo '<pre>';
 //			echo $billtype . $billnum;
 //			echo '</pre>';

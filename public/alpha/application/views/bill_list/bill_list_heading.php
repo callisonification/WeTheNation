@@ -1,10 +1,27 @@
 <div id="bill_info_container">
   <div class="container">
     <div id="mbr_heading" class="span9 red_title">
+    <?php if($this->uri->uri_string() === 'bill_list' || $this->uri->uri_string() === 'bill_list/senate_bills' || $this->uri->uri_string() === 'bill_list/house_bills'): ?>
       <div class="star_heading_left small"> <!-- Img applied via CSS --> </div>
       <h2>Congressional Bills</h2>
       <div class="star_heading_right small"> <!-- Img applied via CSS --> </div>
       <p class="bill_def">Bills are the most common form of proposals for laws. They require approval from both the House and Senate, as well as the President's signature, in order to become laws. Below is each bill's official title, a link to a page with its full details, and its current status in Congress.</p>
+    <?php elseif($this->uri->uri_string() === 'bill_list/senate_joint_res_bills' || $this->uri->uri_string() === 'bill_list/house_joint_res_bills'): ?>
+      <div class="star_heading_left small"> <!-- Img applied via CSS --> </div>
+      <h2>Joint Resolutions</h2>
+      <div class="star_heading_right small"> <!-- Img applied via CSS --> </div>
+      <p class="bill_def">Joint Resolutions go through the same process as bills to become laws. They are used for appropriations, to amend the Constitution, and to declare war.</p>
+    <?php elseif($this->uri->uri_string() === 'bill_list/senate_con_res_bills' || $this->uri->uri_string() === 'bill_list/house_con_res_bills'): ?>
+      <div class="star_heading_left small"> <!-- Img applied via CSS --> </div>
+      <h2>Concurrent Resolutions</h2>
+      <div class="star_heading_right small"> <!-- Img applied via CSS --> </div>
+      <p class="bill_def">Concurrent resolutions don't become laws. They affect the functioning of Congress itself by requesting a call for recess, a joint session, the creation of a joint committee, and more.</p>
+    <?php elseif($this->uri->uri_string() === 'bill_list/senate_res_bills' || $this->uri->uri_string() === 'bill_list/house_res_bills'): ?>
+      <div class="star_heading_left small"> <!-- Img applied via CSS --> </div>
+      <h2>Resolutions</h2>
+      <div class="star_heading_right small"> <!-- Img applied via CSS --> </div>
+      <p class="bill_def">Resolutions (also called "simple resolutions") are not proposals for laws, but rather are statements of opinion by Congress on various matters.</p>
+    <?php endif; ?>
     </div>
     <div id="sortable" class="span5 bill_sort">
       <p>Filter Bills:</p>
@@ -40,23 +57,39 @@
     <ul class="breadcrumb">
       <li><a href="<?php echo base_url(); ?>">Home</a><span class="divider"> / </span></li>
       <?php if($this->uri->uri_string() === 'bill_list'): ?>
-      <li class="active">All Bills</li>
+          <li class="active">All Bills</li>
       <?php elseif($this->uri->uri_string() === 'bill_list/senate_bills'): ?>
-      <li class="active">Senate Bills</li>
+          <li><a href="<?php echo site_url('bill_list/senate_bills'); ?>">Senate</a>
+          </li><span class="divider"> / </span>
+          <li class="active">Bills</li>
       <?php elseif($this->uri->uri_string() === 'bill_list/senate_joint_res_bills'): ?>
-      <li class="active">Senate Joint Resolutions</li>
+          <li><a href="<?php echo site_url('bill_list/senate_bills'); ?>">Senate</a>
+          </li><span class="divider"> / </span>
+          <li class="active">Joint Resolutions</li>
       <?php elseif($this->uri->uri_string() === 'bill_list/senate_con_res_bills'): ?>
-      <li class="active">Senate Concurrent Resolutions</li>
+          <li><a href="<?php echo site_url('bill_list/senate_bills'); ?>">Senate</a>
+          </li><span class="divider"> / </span>
+          <li class="active">Concurrent Resolutions</li>
       <?php elseif($this->uri->uri_string() === 'bill_list/senate_res_bills'): ?>
-      <li class="active">Senate Resolutions</li>
+          <li><a href="<?php echo site_url('bill_list/senate_bills'); ?>">Senate</a>
+          </li><span class="divider"> / </span>
+          <li class="active">Resolutions</li>
       <?php elseif($this->uri->uri_string() === 'bill_list/house_bills'): ?>
-      <li class="active">House Bills</li>
+          <li><a href="<?php echo site_url('bill_list/house_bills'); ?>">House</a>
+          </li><span class="divider"> / </span>
+          <li class="active">Bills</li>
       <?php elseif($this->uri->uri_string() === 'bill_list/house_joint_res_bills'): ?>
-      <li class="active">House Joint Resolutions</li>
+          <li><a href="<?php echo site_url('bill_list/house_bills'); ?>">House</a>
+          </li><span class="divider"> / </span>
+          <li class="active">Joint Resolutions</li>
       <?php elseif($this->uri->uri_string() === 'bill_list/house_con_res_bills'): ?>
-      <li class="active">House Concurrent Resolutions</li>
+          <li><a href="<?php echo site_url('bill_list/house_bills'); ?>">House</a>
+          </li><span class="divider"> / </span>
+          <li class="active">Concurrent Resolutions</li>
       <?php elseif($this->uri->uri_string() === 'bill_list/house_res_bills'): ?>
-      <li class="active">House Resolutions</li>      
+          <li><a href="<?php echo site_url('bill_list/house_bills'); ?>">House</a>
+          </li><span class="divider"> / </span>
+          <li class="active">Resolutions</li>
       <?php endif; ?>
     </ul>
   </div>
