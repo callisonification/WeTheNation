@@ -48,9 +48,9 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'wtn';
-$db['default']['username'] = 'callisonified';
-$db['default']['password'] = 'Callison0527';
+$db['default']['hostname'] = 'localhost';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'Xnyw1Y58m6g1496';
 $db['default']['database'] = 'WeTheNation';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
