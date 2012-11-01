@@ -12,7 +12,7 @@
 <div id="topsplit">
   <div class="container">
     <div id="tsInfo" class="row">
-      <p class="span9 offset1">Site News :: The Build Begins! Site construciton has started, 8 weeks til launch!</p>
+      <p class="span9 offset1">Site News :: Alpha has been launched, 2.5 weeks til full site launches!</p>
       <p class="span2 offset4"><a href="#" id="si" title="Sign In">Sign In</a> <span> | </span> <a href="#" id="su" title="Sign Up">Sign Up</a></p>
     </div>
   </div>
