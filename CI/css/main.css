@@ -1430,6 +1430,10 @@ a.gld {
 .bill_detail_container h3, .bill_detail_container p {
 	margin:10px 20px;
 }
+.bill_detail_container h3 {
+	font-size:20px;
+	line-height:1.5em;	
+}
 .bill_detail_container p {
 	overflow:hidden;
 	max-height:140px;	
@@ -1439,6 +1443,7 @@ a.gld {
 	position:absolute;
 	bottom:30px;
 	margin:10px 20px;
+	top:245px;
 }
 .secondary_info button {
 	float:left;
