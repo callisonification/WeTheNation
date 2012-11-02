@@ -1,21 +1,21 @@
 <div id="mbr_info_container">
   <div class="container">
     <div class="mbr_detail_container">
-      <div class="mbr_dtl_img"><img src="<?php echo base_url('img/slices/mbr_lg.jpg');?>" title="Person Name" width="150px" height="190px"></div>
-      <h3 class="bl_title">Member Name</h3>
-      <h5 class="bl_title">[Republican]</h5>
-      <p>Representative for North Carolina's 4th congressional district</p>
+      <div class="mbr_dtl_img"><img src="<?php echo base_url('img/members/'.$member->bioguide_id.'.jpg');?>" title="Person Name" width="150px" height="190px"></div>
+      <h3 class="bl_title"><?=$member->display_name;?></h3>
+      <h5 class="bl_title"><?=$member->party?></h5>
+      <p><?=$member->description;?></p>
       <ul class="mbr_info_stats">
-        <li><i class="icon-adjust"></i> Total Session Votes : <strong>500</strong></li>
-        <li><i class="icon-star"></i> Approval Rating : <strong>50%</strong></li>
-        <li><i class="icon-ok-sign"></i> With Party Vote : <strong>50%</strong></li>
-        <li><i class="icon-ban-circle"></i> Abstain Percentage : <strong>50%</strong></li>
+        <li><i class="icon-adjust"></i>Total Session Votes : <strong><?=$member->total_session_votes;?></strong></li>
+        <li><i class="icon-star"></i>Approval Rating : <strong>XX%</strong></li>
+        <li><i class="icon-ok-sign"></i>With Party Vote : <strong><?=$member->with_party_percentage;?>%</strong></li>
+        <li><i class="icon-ban-circle"></i>Abstain Percentage : <strong><?=$member->abstains_percentage;?>%</strong></li>
       </ul>
       <ul class="mbr_info_contact">
         <li><i class="icon-envelope"></i><a href="#">Email this member</a></li>
-        <li><i class="icon-user"></i><a href="#">Members website</a></li>
-        <li><i class="icon-print"></i> Fax : xxx-xxxx-xxxx</li>
-        <li><i class="icon-eye-open"></i> Total views : xx</li>
+        <li><i class="icon-user"></i><a href="<?=$member->website;?>" target="new">Members website</a></li>
+        <li><i class="icon-print"></i>Phone : <?=$member->phone;?></li>
+        <li><i class="icon-eye-open"></i>Total views : xx</li>
       </ul>
       <button class="mbr_follow btn-primary" type="button">Follow Member</button>
     </div>
@@ -40,8 +40,12 @@
   <div class="container">
     <ul class="breadcrumb">
       <li><a href="<?php echo base_url();?>">Home</a><span class="divider"> / </span></li>
-      <li><a href="<?php echo site_url('member_list/senate_members');?>">Senate</a><span class="divider"> / </span></li>
-      <li class="active">Senators Name</li>
+      <?php if($member->role_type === 'Senator'): ?>
+      <li><a href="<?php echo site_url('member_list/senate_members');?>">Senate Members</a><span class="divider"> / </span></li>
+      <?php elseif($member->role_type === 'Representative') :?>
+      <li><a href="<?php echo site_url('member_list/house_members');?>">House Members</a><span class="divider"> / </span></li>
+	  <?php endif; ?>      
+      <li class="active"><?=$member->display_name;?></li>
     </ul>
   </div>
 </div>
