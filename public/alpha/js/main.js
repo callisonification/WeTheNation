@@ -13,7 +13,7 @@ $(document).ready(function(){
 		
 		//=====scrollTo sign up form=======//
 		$('#su').click(function(){		
-			$.scrollTo('#signup_form', 1000, 'swing');
+			$.scrollTo('#slider', 1000, 'swing');
 			
 			return false;	
 		});
