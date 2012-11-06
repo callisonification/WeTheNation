@@ -3,8 +3,46 @@
     <div class="span2 footfix">
       <h6>WeTheNation:</h6>
       <ul class="footerlinks">
-        <li><a href="#" title="Report a Bug">Report a Bug</a></li>
-        <li><a href="#" title="Contact Us">Contact Us</a></li>
+        <li><a href="#bug_modal" title="Report a Bug" data-toggle="modal">Report a Bug</a></li>
+        <!-- Modal -->
+        <div id="bug_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Report a Bug</h3>
+            </div>
+            <div class="modal-body">
+                <form id="bugform" name="bugform" method="post" action="<?=site_url('email_handler/send_bug');?>">
+                	<input type="text" name="subject" placeholder="Name the bug" />
+                    <br />
+                    <textarea name="message" placeholder="Explain the bug"></textarea>
+                    <br />
+                    <input type="submit" value="Send" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            </div>
+        </div>
+        <li><a href="#contact_modal" title="Contact Us" data-toggle="modal">Contact Us</a></li>
+        <!-- Modal -->
+        <div id="contact_modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h3 id="myModalLabel">Contact Us</h3>
+            </div>
+            <div class="modal-body">
+                <form id="contactform" name="contactform" method="post" action="<?=site_url('email_handler/send_contact');?>">
+                	<input type="text" name="subject" placeholder="Subject" />
+                    <br />
+                    <textarea name="message" placeholder="Message"></textarea>
+                    <br />
+                    <input type="submit" value="Send" />
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+            </div>
+        </div>        
         <li><a href="#" title="View Site Map">Site Map</a></li>
         <li><a href="#" title="Terms of Use Policy">Terms of Use</a></li>
         <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
@@ -30,7 +68,7 @@
     </div>
     <div class="span5" id="newsletter">
       <h6>Sign up for our Newsletter:</h6>
-      <p>Sign up for our newletter to recieve updates about the site, its members, and future updates and features</p>
+      <p>Sign up for our newletter to receive updates about the site, its members, and future updates and features</p>
       <form class="navbar-form pull-left">
         <button type="submit" class="btn"><i class="icon-envelope"></i></button>
         <input type="text" class="span4" placeholder="Enter email address">
