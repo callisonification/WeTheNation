@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/wtn/CI';
+$config['base_url']	= 'http://www.wethenation.us/alpha';
 
 /*
 |--------------------------------------------------------------------------

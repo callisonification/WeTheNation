@@ -11,7 +11,7 @@
                 <h3 id="myModalLabel">Report a Bug</h3>
             </div>
             <div class="modal-body">
-                <form id="bugform" name="bugform" method="post" action="<?=site_url('email_handler/send_bug');?>">
+                <form id="bugform" name="bugform" method="post" action="<?=base_url('email_handler/send_bug');?>">
                 	<input type="text" name="subject" placeholder="Name the bug" />
                     <br />
                     <textarea name="message" placeholder="Explain the bug"></textarea>
@@ -31,7 +31,7 @@
                 <h3 id="myModalLabel">Contact Us</h3>
             </div>
             <div class="modal-body">
-                <form id="contactform" name="contactform" method="post" action="<?=site_url('email_handler/send_contact');?>">
+                <form id="contactform" name="contactform" method="post" action="<?=base_url('email_handler/send_contact');?>">
                 	<input type="text" name="subject" placeholder="Subject" />
                     <br />
                     <textarea name="message" placeholder="Message"></textarea>
