@@ -15,8 +15,8 @@ class Email_handler extends CI_Controller {
 		$this->email->message($mssg);
 		
 		$this->email->send();
-		$this->email->print_debugger();
-			
+		echo $this->email->print_debugger();
+					
 	}
 	
 	function send_contact() {
@@ -26,13 +26,13 @@ class Email_handler extends CI_Controller {
 		$subject = $this->input->post('subject');
 		$mssg = $this->input->post('message');
 		
-		$this->email->from('contact@wethenation.us', 'Bug Report');
+		$this->email->from('contact@wethenation.us', 'Contact');
 		$this->email->to('admin@wethenation.us');
 		$this->email->subject($subject);
 		$this->email->message($mssg);
 		
 		$this->email->send();
-		$this->email->print_debugger();
+		echo $this->email->print_debugger();
 			
 	}
 
