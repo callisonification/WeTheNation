@@ -18,6 +18,14 @@ $(document).ready(function(){
 			return false;	
 		});
 		
+//		$('.customtooltip').tooltip({
+//			'animation' : true,
+//			'placement' : 'right',
+//		});
+		
+		//=====Fixes model z-indexing issue=======//
+		$('.modal').appendTo($('body'));
+		
 		//=====add inner coment action=======//
 		$('.add_comment a').click(function(){
 			$('.inline_comment').css({'display' : 'block'});
