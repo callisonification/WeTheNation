@@ -52,12 +52,10 @@ body {
 		-webkit-transform: rotate(360deg);
 	}
 }
-
 @-moz-keyframes spin {
   from { -moz-transform: rotate(0deg); }
   to { -moz-transform: rotate(360deg); }
 }
-
 @-ms-keyframes spin {
 	 from {
 	-ms-transform: rotate(0deg);
