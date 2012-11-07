@@ -1,6 +1,6 @@
   <div id="signup_form" class="span5">
     <h2>Take a Stand!</h2>
-    <p><span>Join Today</span> and let Congress know how you feel about the issues.</p>
+    <p><span>Join Today</span> and make your voice heard!</p>
     <form id="signup" name="signup_form" method="POST" action="<?php echo site_url('account/register'); ?>">
       <label>Email</label>
       <input type="text" placeholder="ex: email@domain.com" class="span4" name="email">

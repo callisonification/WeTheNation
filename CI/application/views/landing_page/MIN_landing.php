@@ -6,7 +6,6 @@
   <div id="sidebar_members" class="span5">
     <div class="btn-group mbr_btns" data-toggle="buttons-radio">
       <button type="button" class="btn">Senate</button>
-      <button type="button" class="btn">Show All</button>
       <button type="button" class="btn">House</button>
     </div>
     <div class="mbrholder"> <a href="#">
@@ -17,3 +16,4 @@
       <p><i class="icon-comment"></i> :  XX</p>
       </span> </a> </div>
   </div>
+</div>

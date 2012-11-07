@@ -5,17 +5,25 @@
     <div class="star_heading_right"> <!-- Img applied via CSS --> </div>
   </div>
   <div id="news" class="span9">
+  	<?php foreach($bills as $bill): ?>
     <div class="module news">
       <div class="icon stock"> <!-- Img applied via CSS --> 
-      	<p class="bill_num">S. 3456</p>
+      	<p class="bill_num"><?=$bill->display_num;?></p>
+        <?php if($bill->bill_type == 'senate_bill' || $bill->bill_type == 'senate_joint_resolution' || $bill->bill_type == 'senate_concurrent_resolution' || $bill->bill_type == 'senate_resolution'):?>
         <p class="bill_name">Senate</p>
+        <?php elseif($bill->bill_type == 'house_bill' || $bill->bill_type == 'house_joint_resolution' || $bill->bill_type == 'house_concurrent_resolution' || $bill->bill_type == 'house_resolution'):?>
+        <p class="bill_name">House</p>
+        <?php endif; ?>
       </div>
-      <a href="<?php echo site_url('bill_detail/get_details'); ?>" title="View this bill >>">
-      <h3 class="bl_title">Bill Common Title</h3>
-      <p>Sed diam nonummy nibh euismod, tincidunt ut laoreet dolore? Usus legentis in iis qui facit eorum claritatem Investigationes demonstraverunt lectores legere. Aliquam erat volutpat ut wisi enim ad minim veniam quis nostrud!</p>
+      <a href="<?php echo site_url('bill_detail/get_details/'.$bill->id); ?>" title="View this bill >>">
+      <h3 class="bl_title"><?=$bill->title_common;?></h3>
+      <p><?=$bill->bill_summary;?></p>
       </a>
       <div class="star_split"> <!-- Img applied via CSS --> </div>
     </div>
+    <?php endforeach; ?>
+    
+<!-- // pagination built and ready / currently only shows 5 results //
     <div class="pagination pagination-centered">
       <ul>
         <li class="disabled"><a href="#">Prev</a></li>
@@ -25,5 +33,5 @@
         <li><a href="#">4</a></li>
         <li><a href="#">Next</a></li>
       </ul>
-    </div>
-  </div>
+    </div>	//-->  
+</div>
