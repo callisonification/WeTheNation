@@ -59,5 +59,5 @@ class Curl_calls extends CI_Controller {
 		}//end for loop
 			
 	}//end get_oc_members function - democrats
-		
+			
 }//end curl controller class

@@ -60,7 +60,7 @@ class Curl_model extends CI_Model {
 		//loop thru results after they have been converted to an XML array		
 		foreach($xml['objects'] as $obj){
 			
-			//check the make sure results has a current congress number : numbers start at 110
+			 //check the make sure results has a current congress number : numbers start at 110
 			//so if the bill is an older record then it wont be stored into database
 			if($obj['current_role']['congress_numbers'][0]){
 				
@@ -120,6 +120,7 @@ class Curl_model extends CI_Model {
 			$tfc = $obj['bill']['title_full_common'];
 			$sum = $obj['bill']['summary'];
 			$tc = $obj['bill']['title_common'];
+			$sid = $obj['bill']['sponsor_id'];
 			
 			//check the bill type and change it accordingly to match my database
 			if($billtype === 's'){
@@ -148,7 +149,8 @@ class Curl_model extends CI_Model {
 			$data = array(
 				'title_common' => $tc,
 				'title_full' => $tfc,
-				'bill_summary' => $sum
+				'bill_summary' => $sum,
+				'sponsor_id' => $sid
 			);
 			
 //			var_dump($data);
@@ -185,6 +187,7 @@ class Curl_model extends CI_Model {
 				$vmw = $obj['person']['person_stats']['votes_most_often_with_id'];
 				$vlw = $obj['person']['person_stats']['votes_least_often_with_id'];
 				$tsv = $obj['person']['total_session_votes'];
+				$eml = $obj['person']['contact_webform'];
 				
 				$data = array(
 					'with_party_percentage' => round($wpp),
@@ -192,7 +195,8 @@ class Curl_model extends CI_Model {
 					'votes_most_with' => $vmw,
 					'votes_least_with' => $vlw,
 					'total_session_votes' => $tsv,
-					'phone' => $phone
+					'phone' => $phone,
+					'webform' => $eml
 				);
 				
 				$this->db->where('person_id', $pid);
@@ -202,6 +206,46 @@ class Curl_model extends CI_Model {
 			
 		}//end outer foreach loop
 			
-	}//end get_oc_members_d function	
+	}//end get_oc_members_d function
+	
+	function get_oc_BIN() {
+		
+		$result = simplexml_load_file('http://api.opencongress.org/bills_in_the_news_this_week');
+		$list = '';
+		
+		foreach($result->bill as $obj){
+			$billtype = $obj->{'bill-type'};
+			$num = $obj->number;
+			
+			 //check the bill type and change it accordingly to match my database
+			//NOTE: this uses == instead of === || is not the same as the conditional above
+			if($billtype == 's'){
+				$billtype = 'S.';	
+			}elseif($billtype == 'sr'){
+				$billtype = 'S.Res.';
+			}elseif($billtype == 'sj'){
+				$billtype = 'S.J.Res.';
+			}elseif($billtype == 'sc'){
+				$billtype = 'S.Con.Res.';
+			}elseif($billtype == 'h'){
+				$billtype = 'H.R.';	
+			}elseif($billtype == 'hr'){
+				$billtype = 'H.Res.';
+			}elseif($billtype == 'hj'){
+				$billtype = 'H.J.Res.';
+			}elseif($billtype == 'hc'){
+				$billtype = 'H.Con.Res.';
+			}
+			
+			$list .= '"'.$billtype.' '.$num.'",';
+		}
+		
+		$list = substr_replace($list, '', -1);
+		$sql = 'SELECT * FROM bills_master where display_num in ('.$list.')';
+		$q = $this->db->query($sql);
+		$bills = $q->result();
+		
+		return $bills;
+	}
 		
 }

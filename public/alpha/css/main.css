@@ -8,6 +8,16 @@
 body {
 	background-image: url(../img/slices/body_bg_06.png);
 }
+@font-face {
+    font-family: 'anchor_jackregular';
+    src: url('../fonts/anchorjack-webfont.eot');
+    src: url('../fonts/anchorjack-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/anchorjack-webfont.woff') format('woff'),
+         url('../fonts/anchorjack-webfont.ttf') format('truetype'),
+         url('../fonts/anchorjack-webfont.svg#anchor_jackregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
 .span3, .span4, .span5, .span6 {
 	margin: 0;
 }
@@ -45,15 +55,17 @@ body {
 }
 	/*== Spin properties ==*/
 @-webkit-keyframes spin {
-	from {-webkit-transform: rotate(0deg);}
+	 from {-webkit-transform: rotate(0deg);}
 	to {-webkit-transform: rotate(360deg);}
 }
-@-moz-keyframes spin {
-	from {-moz-transform: rotate(0deg);}
-	to {-moz-transform: rotate(360deg);}
+
+/*@-moz-keyframes spin {
+  from {-moz-transform: rotate(0deg);}
+  to {-moz-transform: rotate(360deg);}
 }
+*/
 @-ms-keyframes spin {
-	from {-ms-transform: rotate(0deg);}
+	 from {-ms-transform: rotate(0deg);}
 	to {-ms-transform: rotate(360deg);}
 }
 /*== bill icon properties ==*/
@@ -266,7 +278,7 @@ body {
 	margin: 20px 0;
 	margin-left: 45px;
 }
-#news .module.news:nth-child(8) .star_split, .module.mbr:last-child .xl, .module.bill:last-child .xl {
+#news .module.news:nth-child(5) .star_split, .module.mbr:last-child .xl, .module.bill:last-child .xl {
 	display: none;
 }
 #news_heading, #mbr_heading {
@@ -306,6 +318,10 @@ body {
 	margin-left: 100px;
 	margin-bottom: 5px;
 	float: left;
+}
+.news h3 {
+	font-size:20px;
+	line-height:1.5em;	
 }
 .news p, .mbr p, .bill p {
 	margin: 0 0 10px 100px;
@@ -432,8 +448,8 @@ body {
 	margin-bottom: 15px;
 }
 .mbr_btns {
-	width: 225px;
-	margin: 10px auto;
+	width: 145px;
+	margin: 0 auto;
 	margin-bottom: 15px;
 }
 /*==== heading styles ====*/
@@ -476,13 +492,19 @@ body {
 #myCarousel {
 	padding-top: 20px;
 	left: 75px;
+	margin:0;
+	margin-left:-10px;
 }
 #myCarousel .item {
-	width: 725px;
+	width: 825px;
 	margin: 0 auto;
 }
 #myCarousel a {
 	margin-top: 0;
+}
+.carousel-inner {
+	width:830px;
+	margin-left:135px;	
 }
 .carousel-control {
 	background-color: #132c40;
@@ -541,6 +563,7 @@ body {
 	text-align: right;
 	font-style: normal;
 	color: #872501;
+	padding:0;
 }
 /*==== Sign up form styles ====*/
 #signup_form {
@@ -557,23 +580,25 @@ body {
 	box-shadow: inset 0px 2px 5px 0px #222;
 }
 #signup_form h2 {
-	width: 281px;
-	height: 33px;
-	background-image: url(../img/slices/form_cta_27.png);
-	background-repeat: no-repeat;
-	text-indent: -9999px;
+	font-family:'anchor_jackregular';	
+	font-size:30px;
 	margin: 10px auto;
+	color:#eee;
+	text-align:center;
+	font-weight:100;
+	text-shadow: 0px 1px 1px #999, 0px 1px 1px #555, 0px 1px 1px #000;
 }
 #signup_form p {
-	text-align: center;
 	font-size: 18px;
-	color: #fffad8;
 	padding: 0 50px;
-	text-shadow: 0px 1px 1px #000;
+	color:#132c40;
+	text-align:center;
+	text-shadow: 0px 1px 0px #999, 0px 1px 0px #555, 0px 1px 0px #000;
 }
 #signup_form p span {
 	font-weight: bold;
 	text-decoration: underline;
+	color:#eee;
 }
 #signup {
 	margin: 5px 40px;
@@ -584,8 +609,9 @@ body {
 	border-radius: 5px;
 }
 #signup label {
-	font-size: 14px;
+	font-size: 15px;
 	color: #132c40;
+	text-shadow: 0px 1px 0px #bbb;	
 	font-weight: bold;
 }
 #signup span {
@@ -649,9 +675,28 @@ body {
 	color: #fffad8;
 	font-weight: normal;
 }
+/*==== Modal styles ====*/
+.modal-header, .modal-footer {
+	background-image:url(../img/slices/blue_stripe.png)	
+}
+.modal-header h3 {
+	color: #dfe3e5;
+}
+.modal-body {
+	background-image:url(../img/slices/sidebar_bg_03.png);	
+}
+.modal textarea, .modal .text {
+	width:515px;	
+}
+.modal form{
+	margin:0;
+}
+.modal {
+	background-color:#000 !important;	
+}
 /*==== Social badge styles ====*/
 #connect {
-	padding-left: 5px;
+	padding-left: 10px;
 }
 #connect h6 {
 	text-align: center;
@@ -690,7 +735,7 @@ body {
 }
 /*==== Newsletter sing up form ====*/
 #newsletter {
-	padding-left: 20px;
+	padding-left: 10px;
 	margin-left: 70px;
 }
 #newsletter p {
@@ -1184,6 +1229,8 @@ body {
 	color:#132c40;
 	font-weight:bold;
 	text-shadow: 0px 1px 1px #ddd;
+	font-family:'anchor_jackregular';
+	font-size:20px;
 }
 .total_votes {
 	width:100px;
@@ -1204,11 +1251,11 @@ body {
 }
 #mbr_rating_container h4 {
 	font-size:110px;
-	font-weight:bold;
 	margin:75px 0 0 10px;
 	color:#132c40;
 	text-align:center;
 	text-shadow: 0px 1px 3px #ddd;
+	font-family:'anchor_jackregular';
 }
 #mbr_rates {
 	width:400px;
@@ -1501,6 +1548,7 @@ a.gld {
 	width:80px !important;
 	margin:25px 35px 25px 50px !important;
 	font-size:40px !important;
+	font-family:'anchor_jackregular';
 }
 .dashboard {
 	margin-top:35px;	

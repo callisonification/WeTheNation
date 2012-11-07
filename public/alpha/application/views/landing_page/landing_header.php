@@ -6,6 +6,11 @@
 <link href="<?php echo base_url('/css/bootstrap.min.css');?>" rel="stylesheet">
 <link href="<?php echo base_url('/css/main.css');?>" rel="stylesheet">
 <link rel="icon" type="image/png" href="<?php echo base_url('img/slices/favicon.ico');?>">
+<meta name="keywords" content="congress,senate,house of representatives,bills,legislation,legislator,law,amendment,resolution,joint resolution,concurrent resolution,nation,we the nation,wethenation" />
+<meta name="description" content="WeTheNation is a non-partisan, not for profit, social site that provides the facts about Congress including its current members and current legislation. WeTheNation provides users a way to keep track of, vote on, and share their opinions on current members and bills in Congress." />
+<meta name="robots" content="index, follow" />
+<meta name="language" content="en" />
+<meta name="author" content="Christopher Allison" />
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
