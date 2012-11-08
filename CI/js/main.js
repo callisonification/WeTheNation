@@ -20,12 +20,16 @@ $(document).ready(function(){
 		$('#si_cxl').click(function(){
 			console.log('fire!');	
 		})
-		
-//		$('.customtooltip').tooltip({
-//			'animation' : true,
-//			'placement' : 'right',
-//		});
-		
+				
+		//=====scrollTo member state=======//
+		$('.states a').click(function(){
+			var state = $(this).attr('href').toString();
+			console.log(state);
+			$.scrollTo(state, 1000, 'swing');
+			
+			return false;
+		});
+				
 		//=====Fixes model z-indexing issue=======//
 		$('.modal').appendTo($('body'));
 		

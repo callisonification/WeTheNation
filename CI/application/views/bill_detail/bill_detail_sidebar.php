@@ -25,23 +25,15 @@
         </div>
       </div>
       </a> </div>
-    <h4 class="red_title">Share This Bill</h4>
-    <div class="bubble_2_right">
-      <p class="regarding">Regarding bill H.R. 5678</p>
-      <p><span>"</span>Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis natoque penatibus.<span>"</span></p>
-      <p class="person">- Some Person</p>
-    </div>
     <h4 class="red_title">Trending Keywords</h4>
     <div class="keywords">
-      <p class="keyword">keyword</p>
-      <p class="keyword">long keyword</p>
-      <p class="keyword">longer keyword</p>
-      <p class="keyword">longer even keyword</p>
-      <p class="keyword">keyword</p>
-      <p class="keyword">keyword</p>
-      <p class="keyword">keyword</p>
-      <p class="keyword">long keyword</p>
-    </div>    
+      <p class="keyword">Economy</p>
+      <p class="keyword">Employment</p>
+      <p class="keyword">Legislation</p>
+      <p class="keyword">Health Care</p>
+      <p class="keyword">Climate Change</p>
+      <p class="keyword">Social Policy</p>
+    </div>
   </div>
 </div>
 </div>

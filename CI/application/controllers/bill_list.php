@@ -5,6 +5,7 @@ class Bill_List extends CI_Controller {
 	function index(){		
 		
 		$this->load->model('bill_model');
+		$this->bill_model->fix_bill_status();
 		$result['bills'] = $this->bill_model->get_all_bills();
 			
 		$this->load->view('site_main_header.php');

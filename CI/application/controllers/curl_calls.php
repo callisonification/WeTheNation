@@ -41,7 +41,7 @@ class Curl_calls extends CI_Controller {
 					
 			$this->curl_model->get_oc_bills($i);
 			
-			//echo 'page '.$i.' loaded'.'<br>';
+			echo 'page '.$i.' loaded'.'<br>';
 				
 		}//end for loop
 	

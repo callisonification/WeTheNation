@@ -3,7 +3,6 @@
     <div class="mbr_detail_container">
       <div class="mbr_dtl_img"><img src="<?php echo base_url('img/members/'.$member->bioguide_id.'.jpg');?>" title="Person Name" width="150px" height="190px"></div>
       <h3 class="bl_title"><?=$member->display_name;?></h3>
-      <h5 class="bl_title"><?=$member->party?></h5>
       <p><?=$member->description;?></p>
       <ul class="mbr_info_stats">
         <li><i class="icon-adjust"></i>Total Session Votes : <strong><?=$member->total_session_votes;?></strong></li>
@@ -17,7 +16,7 @@
         <li><i class="icon-print"></i>Phone : <?=$member->phone;?></li>
         <li><i class="icon-eye-open"></i>Total views : xx</li>
       </ul>
-      <button class="mbr_follow btn-primary" type="button">Follow Member</button>
+      <button class="mbr_follow btn-primary btn btn_follow" type="button">Follow Member</button>
     </div>
     <div id="mbr_rating_container" class="span5 offset1">
       <h3>Average User Rating</h3>
