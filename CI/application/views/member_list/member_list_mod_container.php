@@ -1,7 +1,7 @@
 <div id="topcontent" class="container">
 <div id="news" class="span10">
   <?php foreach($members as $member): ?>
-  <div id="<?=$member->state?>" class="module mbr"> <a href="<?php echo site_url('member_detail/get_details/'.$member->id); ?>" title="View this member >>">
+  <div id="<?=$member->state;?>" class="module mbr"> <a href="<?php echo site_url('member_detail/get_details/'.$member->id); ?>" title="View this member >>">
     <div class="mbr_photo"><img src="<?php echo base_url('img/members/'.$member->bioguide_id.'.jpg'); ?>" height="115px" width="95px" /></div>
     <h3 class="bl_title">
       <?=$member->display_name;?>

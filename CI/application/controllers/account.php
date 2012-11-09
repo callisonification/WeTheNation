@@ -32,7 +32,7 @@ class Account extends CI_Controller {
 		
 		if($condition === TRUE || $this->account_model->logged_in() === TRUE){
 			
-			redirect('user_dashboard');
+			redirect('user_dashboard/get_user');
 				
 		}else{
 			
@@ -57,8 +57,7 @@ class Account extends CI_Controller {
 		}else{
 			
 			$this->account_model->login();
-			
-			redirect('user_dashboard');
+			redirect('user_dashboard/get_user');
 				
 		}		
 		
@@ -106,7 +105,7 @@ class Account extends CI_Controller {
 			
 			if($this->account_model->create($data) === TRUE){
 				
-				redirect('user_dashboard');
+				redirect('user_dashboard/get_user');
 					
 			}else{
 				

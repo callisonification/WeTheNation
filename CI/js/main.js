@@ -8,7 +8,7 @@ $(document).ready(function(){
 			'html' : true,
 			'placement' : 'bottom',
 			'trigger' : 'click',
-			'content' : '<form name="login_form" method="POST" action="http://www.wethenation.us/alpha/account/login"><label>Email</label><input type="text" name="email" /><label>Password</label><input type="password" name="password" /><input type="submit" value="Login" class="btn" /> <a href="#" id="si_cxl">Cancel</a></form>',
+			'content' : '<form name="login_form" method="POST" action="http://localhost/wtn/ci/account/login"><label>Email</label><input type="text" name="email" /><label>Password</label><input type="password" name="password" /><input type="submit" value="Login" class="btn" /> <a href="#" id="si_cxl">Cancel</a></form>',
 		}); 
 		
 		//=====scrollTo sign up form=======//
@@ -24,11 +24,13 @@ $(document).ready(function(){
 		//=====scrollTo member state=======//
 		$('.states a').click(function(){
 			var state = $(this).attr('href').toString();
-			console.log(state);
-			$.scrollTo(state, 1000, 'swing');
+			$.scrollTo(state+' H3', 1000, 'swing');
 			
 			return false;
 		});
+		
+		//=====initialize carousel for auto-start=======//
+		$('.carousel').carousel();
 				
 		//=====Fixes model z-indexing issue=======//
 		$('.modal').appendTo($('body'));
