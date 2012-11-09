@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://www.wethenation.us/alpha';
+$config['base_url']	= 'http://www.wethenation.us/beta';
 
 /*
 |--------------------------------------------------------------------------
@@ -245,7 +245,7 @@ $config['encryption_key'] = 'wethenation';
 |
 */
 $config['sess_cookie_name']		= 'ci_session';
-$config['sess_expiration']		= 7200;
+$config['sess_expiration']		= 0;
 $config['sess_expire_on_close']	= FALSE;
 $config['sess_encrypt_cookie']	= FALSE;
 $config['sess_use_database']	= FALSE;
