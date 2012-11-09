@@ -30,7 +30,7 @@
 <div id="topsplit">
   <div class="container">
     <div id="tsInfo" class="row">
-      <p class="span9 offset1">Site News :: Welcome to Alpha!</p>
+      <p class="span9 offset1">Site News :: Welcome to Beta!</p>
       <?php if($this->session->userdata('logged_in') === FALSE):?>
       <p class="span2 offset4"><a href="#" id="si" title="Sign In">Sign In</a> <span> | </span> <a href="#" id="su" title="Sign Up">Sign Up</a></p>
       <?php elseif($this->session->userdata('logged_in') === TRUE):?>
