@@ -24,7 +24,7 @@
           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
         </div>
       </div>
-      <a href="#full_bill" role="button" class="btn btn-small" data-toggle="modal"><i class="icon-list"></i> Full Bill</a>
+      <a href="#full_bill" role="button" class="btn btn-small" data-toggle="modal"><i class="icon-file"></i> Full Bill</a>
       <div id="full_bill" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>

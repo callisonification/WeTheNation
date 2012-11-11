@@ -15,9 +15,9 @@
         <p class="bill_name">House</p>
         <?php endif; ?>
       </div>
-      <a href="<?php echo site_url('bill_detail/get_details/'.$bill->id); ?>" title="View this bill >>">
+      <a href="<?php echo site_url('bill_detail/get_details/'.$bill->id); ?>" title="View Bill Details">
       <h3 class="bl_title"><?=$bill->title_common;?></h3>
-      <p><?=$bill->bill_summary;?></p>
+      <p><?=word_limiter($bill->bill_summary, 75);?></p>
       </a>
       <div class="star_split"> <!-- Img applied via CSS --> </div>
     </div>

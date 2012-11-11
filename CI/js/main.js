@@ -29,8 +29,40 @@ $(document).ready(function(){
 			return false;
 		});
 		
+		$('li .star').hover(
+			function(){
+				$(this).addClass('active');
+				$(this).parent().prevAll().find('.star').addClass('active');			
+			},
+			function(){
+				$(this).removeClass('active');
+				$(this).parent().prevAll().find('.star').removeClass('active');
+		});
+		
+		$('.star').eq(3).prevAll().addClass('active');
+						
+		//=====Hover effect for Members in the news modules=======//
+		$('.mbrholder').hover(
+			function(){
+				$(this).css({'background-color' : '#e3d9c3'});
+			},
+			function(){
+				$(this).css({'background-color' : 'transparent'});
+		});
+		
+		//=====Hover effect for Bills in the news modules=======//
+		$('.module.news p').hover(
+			function(){
+				$(this).css({'text-decoration' : 'underline'});
+			},
+			function(){
+				$(this).css({'text-decoration' : 'none'});
+		});
+		
 		//=====initialize carousel for auto-start=======//
-		$('.carousel').carousel();
+		$('.carousel').carousel({
+			interval : 4000	
+		});
 				
 		//=====Fixes model z-indexing issue=======//
 		$('.modal').appendTo($('body'));

@@ -1,12 +1,9 @@
   <div id="mbr_sidebar" class="span4 offset1">
-     <h4 class="red_title">New Bills</h4>
+     <h4 class="red_title">Newest Bills</h4>
     <ul class="pvb">
-      <li><a href="#">Link to new bill</a></li>
-      <li><a href="#">Link to new bill</a></li>
-      <li><a href="#">Link to new bill</a></li>
-      <li><a href="#">Link to new bill</a></li>
-      <li><a href="#">Link to new bill</a></li>
-      <li><a href="#">Link to new bill</a></li>
+    <?php foreach($newbills as $bill):?>
+      <li><a href="<?=base_url('bill_detail/get_details/'.$bill->id);?>" title="<?=$bill->title_common;?>"><?=character_limiter($bill->title_common, 65);?></a></li>
+    <?php endforeach; ?>
     </ul>
     <h4 class="red_title">Trending Keywords</h4>
     <div class="keywords">

@@ -67,6 +67,8 @@ class Bill_model extends CI_Model {
 		
 	}//end get house bills function
 	
+	 //this function pulls all bill statuses from the db, checks their value and cleans them up accordingly
+	//the cleans statuses are then pushed back into the db via update
 	function fix_bill_status() {
 		$this->db->select('id, current_status');
 		$q = $this->db->get('bills_master');
@@ -145,7 +147,17 @@ class Bill_model extends CI_Model {
 			
 			$this->db->where('id', $item->id);
 			$this->db->update('bills_master', $data);
-		}
-	}
+		
+		}//end foreach loop
 	
-}
+	}//end fix bill status function
+	
+	function get_newest_bills() {
+		
+		$this->db->order_by('intro_date', 'desc');
+		$q = $this->db->get('bills_master', 10);
+		return $q->result();
+			
+	}//End get new
+	
+}//end bill model 

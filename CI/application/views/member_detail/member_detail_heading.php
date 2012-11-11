@@ -25,11 +25,11 @@
       <div id="mbr_rates">
         <p>Rate This Member</p>
         <ul class="star_list">
-          <li><a href="#" class="brz" title="20%">20</a></li>
-          <li><a href="#" class="brz" title="40%">40</a></li>
-          <li><a href="#" class="slv" title="60%">60</a></li>
-          <li><a href="#" class="slv" title="80%">80</a></li>
-          <li><a href="#" class="gld" title="100%">100</a></li>
+          <li><a href="#" class="brz star" title="20%">20</a></li>
+          <li><a href="#" class="brz star" title="40%">40</a></li>
+          <li><a href="#" class="slv star" title="60%">60</a></li>
+          <li><a href="#" class="slv star" title="80%">80</a></li>
+          <li><a href="#" class="gld star" title="100%">100</a></li>
         </ul>
       </div>
     </div>

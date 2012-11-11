@@ -4,16 +4,16 @@
     <div class="sidebar_heading_right"> <!-- Img applied via CSS --> </div>
   </div>
   <div id="sidebar_members" class="span5">
-    <div class="btn-group mbr_btns" data-toggle="buttons-radio">
-      <button type="button" class="btn">Senate</button>
-      <button type="button" class="btn">House</button>
+    <div class="mbrholder">
+      <div class="side_mbr">
+      	<a href="#" title="View Member Profile"><img src="<?=base_url('img/slices/missing_user.png');?>" title="" /></a>
+      </div>
+      <p class="bl_title mgfix">Member Name [D-XX]</p>
+      <p class="article"><a>Really Really Long Article Title</a></p>
+      <p class="article"><a>Really Really Long Article Title</a></p>
+      <p class="article"><a>Really Really Long Article Title</a></p>      
     </div>
-    <div class="mbrholder"> <a href="#">
-      <div class="side_mbr mbr_photo"></div>
-      <p>Member Name</p>
-      <span>
-      <p><i class="icon-eye-open"></i> :  XX</p>
-      <p><i class="icon-comment"></i> :  XX</p>
-      </span> </a> </div>
+    <hr />
+  <!-- //End sidebar MIN module -->
   </div>
 </div>
