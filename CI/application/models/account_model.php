@@ -13,16 +13,17 @@ class Account_model extends CI_Model {
 	
 	function login() {
 		
-		$this->db->select('display_name');
+		$this->db->select('display_name, id');
 		$this->db->where('user_email', $this->input->post('email'));
 		$q = $this->db->get('users_wtn');
 		$result = $q->result();
 		
 		foreach($result as $r){
+			$id = $r->id;
 			$name = $r->display_name;
 		}
 				
-		$data = array('user_email' => $this->input->post('email'), 'logged_in' => TRUE, 'display_name' => $name);
+		$data = array('user_email' => $this->input->post('email'), 'logged_in' => TRUE, 'display_name' => $name, 'user_id' => $id);
 		$this->session->set_userdata($data);
 		
 	}//end login function

@@ -4979,7 +4979,7 @@ button.close {
 .visible-desktop {
   display: inherit !important;
 }
-@media (min-width: 768px) and (max-width: 979px) {
+/*@media (min-width: 768px) and (max-width: 979px) {
   .hidden-desktop {
     display: inherit !important;
   }
@@ -5535,7 +5535,7 @@ button.close {
     width: 8px;
   }
 }
-@media (min-width: 1200px) {
+*/@media (min-width: 1200px) {
   .row {
     margin-left: -30px;
     *zoom: 1;
@@ -5941,7 +5941,7 @@ button.close {
     margin-left: 0;
   }
 }
-@media (max-width: 979px) {
+/*@media (max-width: 979px) {
   body {
     padding-top: 0;
   }
@@ -6086,4 +6086,4 @@ button.close {
     height: auto !important;
     overflow: visible !important;
   }
-}
+*/}
