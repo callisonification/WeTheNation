@@ -2,6 +2,13 @@
 
 class Member_model extends CI_Model {
 	
+	function mem_details($id) {
+		
+		$q = $this->db->get_where('members_master', array('id' => $id));
+		$member = $q->result();
+		return $member[0];
+	}	
+	
 	function get_house_members() {
 		
 		//pulls all members for the house of representatives

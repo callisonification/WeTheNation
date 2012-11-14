@@ -5,7 +5,6 @@ class Member_Detail extends CI_Controller {
 	function get_details() {
 		
 		//loaded models
-		$this->load->model('detail_model');
 		$this->load->model('vote_rate_model', 'vrm');
 		$this->load->model('member_model');
 		$this->load->model('crud_model');
@@ -13,10 +12,12 @@ class Member_Detail extends CI_Controller {
 		 //grabs third parameter of uri string and passes to model to retrieve member
 		//detail information from database.		
 		$mem_id = $this->uri->segment(3);
+		$id = $this->session->userdata('user_id');
 		
 		//models for pulling data from db
-		$result['member'] = $this->detail_model->mem_details($mem_id);
+		$result['member'] = $this->member_model->mem_details($mem_id);
 		$result['member_rate'] = $this->vrm->get_mbr_rate($mem_id);
+		$result['user_rate'] = $this->vrm->get_user_rate($id, $mem_id);
 		$sidebar['info'] = $this->member_model->get_mbr_sidebar($mem_id);
 		$comments['comment'] = $this->crud_model->get_mbr_comments($mem_id);
 		

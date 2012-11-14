@@ -1345,7 +1345,9 @@ a.gld {
 }
 .star_list a.active, .star_list a.voted {
 	background-position:top center;	
+	margin-top:4px;
 }
+
 /*==== member detail _ user comments styles ====*/
 .mbr_dtl h2 {
 	text-align:center;
@@ -1604,6 +1606,9 @@ a.gld {
 .thumbup:active, .thumbdown:active {
 	background-position:bottom center;	
 }
+.thumbup.active, .thumbdown.active {
+	background-position:bottom center;	
+}
 .approval_rating, .disapproval_rating {
 	width:80px !important;
 	margin:25px 35px 25px 50px !important;
@@ -1617,4 +1622,30 @@ a.gld {
 	width:480px !important;
 	word-wrap:break-word !important;
 	margin-bottom:0px !important;	
+}
+
+#not_a_user {
+	position:absolute;
+	width:400px;
+	height:265px;
+	background-color:#222;
+	opacity:.95;
+	right:90px;
+	margin-top:25px;
+	
+	/*== border radius ==*/
+	-webkit-border-radius: 5px;
+	border-radius: 5px;	
+}
+#not_a_user.comment {
+		
+}
+#not_a_user p {
+	text-align:center;
+	font-size:20px;
+	color:#fff;
+	margin-top:30px;	
+}
+#not_a_user p:first-child {
+	margin-top:120px;	
 }

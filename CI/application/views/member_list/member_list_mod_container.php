@@ -11,7 +11,7 @@
     </p>
     </a>
     <ul>
-      <li><i class="icon-star"></i> Approval Rating <strong>XX%</strong></li>
+      <li><i class="icon-star"></i> Approval Rating <strong><?=$member->approval_rating;?>%</strong></li>
       <li><i class="icon-ok-sign"></i> With Party Vote <strong>
         <?=$member->with_party_percentage;?>
         %</strong></li>

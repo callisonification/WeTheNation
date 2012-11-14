@@ -2,6 +2,14 @@
 
 class Bill_model extends CI_Model {
 	
+	function bill_details($id) {
+		
+		$q = $this->db->get_where('bills_master', array('id' => $id));
+		$bill = $q->result();
+		return $bill[0];
+			
+	}	
+	
 	function get_all_bills() {
 	
 		$q = $this->db->get('bills_master', 100);
@@ -159,5 +167,20 @@ class Bill_model extends CI_Model {
 		return $q->result();
 			
 	}//End get new
+	
+	function get_bill_sidebar($bid) {
+		
+		$q = $this->db->get_where('bills_master', array('id' => $bid));
+		
+		foreach($q->result() as $r){
+			$sid =  $r->sponsor_id;	
+		}
+		
+		$this->db->where('person_id', $sid);
+		$q = $this->db->get('members_master');
+		$result = $q->result();
+		
+		return $result;
+	}
 	
 }//end bill model 

@@ -24,8 +24,10 @@
         <input type="hidden" value="<?=$this->uri->segment(3);?>" id="member_id" />
         <input type="hidden" value="<?=$this->session->userdata('user_id');?>" id="user_id" />
         <input type="hidden" value="<?=$this->session->userdata('display_name');?>" id="user_name" />
+        <input type="hidden" value="<?=base_url('img/slices/missing_user.png');?>" id="user_photo" />
+        <input type="hidden" value="member" id="comment_type" />               
         </div>
-        <input type="submit" id="comment_btn" class="btn submit" value="Add Comment">
+        <input type="submit" id="mbr_comment_btn" class="btn submit" value="Add Comment">
         <input type="reset" class="btn-link reset" value="Cancel">
       </form>
     </div>
