@@ -277,7 +277,36 @@ class Curl_model extends CI_Model {
 		$q = $this->db->query($sql);
 		$bills = $q->result();
 		
+		
 		return $bills;
+	}
+	
+	function get_mbr_news() {
+	
+//		$this->db->select('person_id');
+//		$q = $this->db->get('members_master');
+//		
+//		foreach($q->result() as $r){
+			
+			//$pid = $r->person_id;
+			$result = $this->curl->simple_get('http://api.opencongress.org/people?person_id=300056&format=json');
+			$xml = json_decode($result, TRUE);
+			
+			var_dump($xml['people']['person']);
+			
+			foreach($xml['people'] as $obj){
+				
+				$bid = $obj['person']['bioguide_id'];
+				$pid = $obj['person']['person_stats']['person_id'];
+				$name = $obj['person']['name'];
+				$title = $obj['person']['recent_news']['title'];
+				$url = $obj['person']['recent_news']['url'];
+				
+				echo $bid;
+				echo $title;
+			}
+			
+//		}
 	}
 		
 }

@@ -35,6 +35,5 @@ class Email_handler extends CI_Controller {
 		$this->email->print_debugger();
 			
 	}
-
 		
 }

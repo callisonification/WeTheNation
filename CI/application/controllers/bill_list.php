@@ -6,10 +6,7 @@ class Bill_List extends CI_Controller {
 		
 		//loads bill model
 		$this->load->model('bill_model');
-		
-		//runs function to fix bill status
-		$this->bill_model->fix_bill_status();
-		
+				
 		//functions that return bill data - passed to views
 		$result['bills'] = $this->bill_model->get_all_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
@@ -27,10 +24,7 @@ class Bill_List extends CI_Controller {
 		
 		//loads bill model
 		$this->load->model('bill_model');
-		
-		//runs function to fix bill status
-		$this->bill_model->fix_bill_status();
-		
+				
 		//functions that return bill data - passed to views
 		$result['bills'] = $this->bill_model->get_all_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
@@ -48,10 +42,7 @@ class Bill_List extends CI_Controller {
 		
 		//loads bill model
 		$this->load->model('bill_model');
-		
-		//runs function to fix bill status
-		$this->bill_model->fix_bill_status();
-		
+				
 		//functions that return bill data - passed to views
 		$result['bills'] = $this->bill_model->get_all_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
@@ -69,10 +60,7 @@ class Bill_List extends CI_Controller {
 		
 		//loads bill model
 		$this->load->model('bill_model');
-		
-		//runs function to fix bill status
-		$this->bill_model->fix_bill_status();
-		
+				
 		//functions that return bill data - passed to views
 		$result['bills'] = $this->bill_model->get_all_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
@@ -90,10 +78,7 @@ class Bill_List extends CI_Controller {
 		
 		//loads bill model
 		$this->load->model('bill_model');
-		
-		//runs function to fix bill status
-		$this->bill_model->fix_bill_status();
-		
+				
 		//functions that return bill data - passed to views
 		$result['bills'] = $this->bill_model->get_all_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
@@ -113,10 +98,7 @@ class Bill_List extends CI_Controller {
 		
 		//loads bill model
 		$this->load->model('bill_model');
-		
-		//runs function to fix bill status
-		$this->bill_model->fix_bill_status();
-		
+				
 		//functions that return bill data - passed to views
 		$result['bills'] = $this->bill_model->get_all_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
@@ -134,10 +116,7 @@ class Bill_List extends CI_Controller {
 		
 		//loads bill model
 		$this->load->model('bill_model');
-		
-		//runs function to fix bill status
-		$this->bill_model->fix_bill_status();
-		
+				
 		//functions that return bill data - passed to views
 		$result['bills'] = $this->bill_model->get_all_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
@@ -155,10 +134,7 @@ class Bill_List extends CI_Controller {
 		
 		//loads bill model
 		$this->load->model('bill_model');
-		
-		//runs function to fix bill status
-		$this->bill_model->fix_bill_status();
-		
+				
 		//functions that return bill data - passed to views
 		$result['bills'] = $this->bill_model->get_all_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
@@ -176,10 +152,7 @@ class Bill_List extends CI_Controller {
 		
 		//loads bill model
 		$this->load->model('bill_model');
-		
-		//runs function to fix bill status
-		$this->bill_model->fix_bill_status();
-		
+				
 		//functions that return bill data - passed to views
 		$result['bills'] = $this->bill_model->get_all_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		

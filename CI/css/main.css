@@ -1216,7 +1216,6 @@ body {
 	margin: 20px;
 	border: 2px groove #dfe3e5;	
 	width:150px;
-	height:188px;
 	float:left;
 	background-image: url(../img/slices/missing_user.png);
 	background-repeat:no-repeat;	
@@ -1648,4 +1647,11 @@ a.gld {
 }
 #not_a_user p:first-child {
 	margin-top:120px;	
+}
+.no_comments {
+	text-align:center;
+	font-size:20px;
+	color:#585140;
+	margin:0;
+	padding:10px 0;
 }

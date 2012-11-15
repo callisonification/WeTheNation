@@ -140,5 +140,17 @@ class Ajax_controller extends CI_Controller {
 		//result encoded so it can be parsed via JS
 		echo json_encode($q);
 	}
+	
+	function newsltr_signup() {
+		
+		$this->load->model('user_model');
+		
+		$data = array(
+			'user_email' => $_POST['user_email']
+		);
+		
+		$this->user_model->newsltr_add_email($data);
+			
+	}	
 		
 }//end ajax controller class

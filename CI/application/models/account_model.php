@@ -5,6 +5,24 @@ class Account_model extends CI_Model {
 	function create($data) {
 		
 		if($this->db->insert('users_wtn', $data)) {
+			
+			$this->db->select('display_name, id');
+			$this->db->where('user_email', $this->input->post('email'));
+			$q = $this->db->get('users_wtn');
+			$result = $q->result();
+			
+			foreach($result as $r){
+				$id = $r->id;
+				$name = $r->display_name;
+			}
+					
+			$data = array('user_email' => $this->input->post('email'), 
+						  'logged_in' => TRUE, 
+						  'display_name' => $name, 
+						  'user_id' => $id
+						  );
+			$this->session->set_userdata($data);
+			
 			return TRUE;			
 		}
 		return FALSE;
@@ -23,7 +41,11 @@ class Account_model extends CI_Model {
 			$name = $r->display_name;
 		}
 				
-		$data = array('user_email' => $this->input->post('email'), 'logged_in' => TRUE, 'display_name' => $name, 'user_id' => $id);
+		$data = array('user_email' => $this->input->post('email'), 
+					  'logged_in' => TRUE, 
+					  'display_name' => $name, 
+					  'user_id' => $id
+					  );
 		$this->session->set_userdata($data);
 		
 	}//end login function

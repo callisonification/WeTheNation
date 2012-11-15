@@ -87,7 +87,7 @@ class Account extends CI_Controller {
 		$this->form_validation->set_rules('email', 'Email Address', 'required|valid_email|callback_email_exists');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|max_length[15]|matches[repass]|sha1');
 		$this->form_validation->set_rules('repass', 'Password', 'required|matches[password]|sha1');
-		$this->form_validation->set_rules('robot', 'Solution', 'required|min_length[1]|max_length[2]|callback_bot_check');
+		//$this->form_validation->set_rules('robot', 'Solution', 'required|min_length[1]|max_length[2]|callback_bot_check');
 		
 		//checks for validation 
 		if($this->form_validation->run() == FALSE){
@@ -96,9 +96,9 @@ class Account extends CI_Controller {
 				
 		}else{
 			
+			$data['display_name'] = $this->input->post('fname');
 			$data['user_email'] = $this->input->post('email');
 			$data['user_pass'] = sha1( $this->_salt . $this->input->post('password') );
-			$data['user_zip'] = $this->input->post('zip');
 			
 			if($this->account_model->create($data) === TRUE){
 				

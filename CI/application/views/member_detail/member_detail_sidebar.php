@@ -8,7 +8,11 @@
         <p><?=$info['vmo'][0]->role_type;?></p>
         <div class="sidebar_rating">
           <p class="bl_title">Approval Rating</p>
-          <p><span>XX%</span></p>
+          <?php if($info['vmo'][0]->approval_rating === NULL):?>
+          <p><span>0%</span></p>
+          <?php else:?>
+          <p><span><?=$info['vmo'][0]->approval_rating;?>%</span></p>
+          <?php endif;?>
         </div>
       </div>
       </a> </div>
@@ -21,7 +25,11 @@
         <p><?=$info['vlo'][0]->role_type;?></p>
         <div class="sidebar_rating">
           <p class="bl_title">Approval Rating</p>
-          <p><span>XX%</span></p>
+          <?php if($info['vlo'][0]->approval_rating === NULL):?>
+          <p><span>0%</span></p>
+          <?php else:?>
+          <p><span><?=$info['vlo'][0]->approval_rating;?>%</span></p>
+          <?php endif;?>
         </div>
       </div>
       </a> </div>

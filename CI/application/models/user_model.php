@@ -31,5 +31,16 @@ class User_model extends CI_Model {
 		
 		redirect('account');
 	}
+	
+	function newsltr_add_email($data) {
+		
+		$email = $data['user_email'];
+		
+		$newdata = array(
+			'user_email' => $email
+		);
+		
+		$this->db->insert('user_newsletter', $newdata);
+	}
 		
 }

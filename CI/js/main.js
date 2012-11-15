@@ -115,6 +115,7 @@ $(document).ready(function(){
 			});
 			
 			update_mbr_comments(mid);
+			$('.no_comments').remove();
 			$('#mbr_comment_form').find('textarea').val('');
 			return false;			
 		});
@@ -258,6 +259,27 @@ $(document).ready(function(){
 			});//end ajax call
 			
 		}//end update member votes function
+		
+		//=====Click handler for newsletter sign up=======//
+		$('#nwsltr_btn').click(function(){
+			
+			var email = $('#newsltr_email').val();
+			
+			$.ajax({
+				url : '/wtn/ci/ajax_controller/newsltr_signup',
+				type : 'POST',
+				data : {
+					'user_email' : 	email
+				},
+				success: function(data){
+					console.log(data);
+				}
+			});
+			
+			$('#newsltr_email').val('');
+			
+			return false;
+		});
 							
 		//=====Hover effect for Members in the news modules=======//
 		$('.mbrholder').hover(
@@ -284,6 +306,14 @@ $(document).ready(function(){
 				
 		//=====Fixes model z-indexing issue for modals=======//
 		$('.modal').appendTo($('body'));
+		
+//		console.log(window.location.pathname);
+//		navigator.geolocation.getCurrentPosition(showPosition);
+//		function showPosition(position)
+//		  {
+//		  console.log("Latitude: " + position.coords.latitude +
+//		  "<br>Longitude: " + position.coords.longitude);
+//		  }
 		
  });
  //end of JS file

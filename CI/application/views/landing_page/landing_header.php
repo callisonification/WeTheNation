@@ -34,8 +34,10 @@
       <?php if($this->session->userdata('logged_in') === FALSE):?>
       <p class="span2 offset4"><a href="#" id="si" title="Sign In">Sign In</a> <span> | </span> <a href="#" id="su" title="Sign Up">Sign Up</a></p>
       <?php elseif($this->session->userdata('logged_in') === TRUE):?>
-      <p class="span3 offset3">Welcome back, <a href="<?=base_url('user_dashboard/get_user')?>"><?=$this->session->userdata('display_name');?></a> | <a href="<?=base_url('account/logout');?>">Sign Out</a></p>
-      <?php endif;?>      
+      <p class="span3 offset3">Welcome back, <a href="<?=base_url('user_dashboard/get_user')?>">
+        <?=$this->session->userdata('display_name');?>
+        </a> | <a href="<?=base_url('account/logout');?>">Sign Out</a></p>
+      <?php endif;?>
     </div>
   </div>
 </div>
