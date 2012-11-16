@@ -8,8 +8,7 @@ $(document).ready(function(){
 			'html' : true,
 			'placement' : 'bottom',
 			'trigger' : 'click',
-			'content' : '<form name="login_form" method="POST" action="/wtn/ci/account/login"><label>Email</label><input type="text" name="email" /><label>Password</label><input type="password" name="password" /><input type="submit" value="Login" class="btn" /> <a href="#" id="si_cxl">Cancel</a></form>',
-		}); 
+			'content' : '<form name="login_form" method="POST" action="/wtn/ci/account/login"><label>Email</label><input type="text" name="email" /><label>Password</label><input type="password" name="password" /><input type="submit" value="Login" class="btn" /></form>'}); 
 		
 		//=====scrollTo sign up form=======//
 		$('#su').click(function(){		
@@ -307,13 +306,28 @@ $(document).ready(function(){
 		//=====Fixes model z-indexing issue for modals=======//
 		$('.modal').appendTo($('body'));
 		
-//		console.log(window.location.pathname);
-//		navigator.geolocation.getCurrentPosition(showPosition);
-//		function showPosition(position)
-//		  {
-//		  console.log("Latitude: " + position.coords.latitude +
-//		  "<br>Longitude: " + position.coords.longitude);
-//		  }
 		
+		$('#signup').validate({
+			rules : {
+				fname : 'required',
+				email : {
+					required : true,
+					email : true	
+				},
+				password : {
+					required : true,
+					mixlength : 6,
+					maxlength : 15	
+				},
+				repass : {
+					equalTo : '#password',
+					required : true	
+				},
+				robot : {
+					required : true,
+					equalTo : 4	
+				}
+			}	
+		});		
  });
  //end of JS file

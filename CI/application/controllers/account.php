@@ -84,10 +84,12 @@ class Account extends CI_Controller {
 	}//end password check function
 	
 	function register() {
+		$this->form_validation->set_rules('fname', 'First Name', 'required');
 		$this->form_validation->set_rules('email', 'Email Address', 'required|valid_email|callback_email_exists');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|max_length[15]|matches[repass]|sha1');
 		$this->form_validation->set_rules('repass', 'Password', 'required|matches[password]|sha1');
-		//$this->form_validation->set_rules('robot', 'Solution', 'required|min_length[1]|max_length[2]|callback_bot_check');
+		$this->form_validation->set_rules('robot', 'Solution', 'required|min_length[1]|max_length[2]|callback_bot_check');
+		
 		
 		//checks for validation 
 		if($this->form_validation->run() == FALSE){
@@ -99,6 +101,14 @@ class Account extends CI_Controller {
 			$data['display_name'] = $this->input->post('fname');
 			$data['user_email'] = $this->input->post('email');
 			$data['user_pass'] = sha1( $this->_salt . $this->input->post('password') );
+			
+			$lat = $this->input->post('lat');
+			$lon = $this->input->post('lon');
+			$q = $this->curl->simple_get('http://services.sunlightlabs.com/api/districts.getDistrictFromLatLong.json?apikey=0d52916dee394bd589d5d5d3bb680315&latitude='.$lat.'&longitude='.$lon);
+			
+			$result = json_decode($q);
+			$data['district_state'] = $result->response->districts[0]->district->state;
+			$data['district_num'] = $result->response->districts[0]->district->number;
 			
 			if($this->account_model->create($data) === TRUE){
 				
@@ -130,7 +140,7 @@ class Account extends CI_Controller {
 	
 	function bot_check($solution) {
 		
-		if($solution !== 4){
+		if($solution != 4){
 			$this->session->set_userdata(array('bot_error' => 'Incorrect Answer, Try Again.'));		
 			return FALSE;
 		}
@@ -138,15 +148,7 @@ class Account extends CI_Controller {
 		return TRUE;
 			
 	}//end email check function	
-	
-	function zip_check($zip) {
 		
-		$result = $this->curl->simple_get('http://services.sunlightlabs.com/api/districts.getDistrictsFromZip.xml?apikey=0d52916dee394bd589d5d5d3bb680315&zip='.$zip);
-		
-		var_dump($result);
-			
-	}//end zip check function
-	
 	function logout() {
 			
 		$this->session->sess_destroy();
