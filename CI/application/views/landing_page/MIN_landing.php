@@ -8,9 +8,9 @@
     <div class="mbrholder">
       <div class="side_mbr">
       	<div class="img">
-            <a href="<?php echo site_url('member_detail/get_details/'.$n->person_id); ?>" title="View Member Profile">
-                <img src="<?=base_url('img/members/'.$n->bioguide_id.'.jpg');?>" title="" />
-            </a>
+        <a href="<?php echo site_url('member_detail/get_details/'.$n->person_id); ?>" title="View Member Profile">
+        	<img src="<?=base_url('img/members/'.$n->bioguide_id.'.jpg');?>" title="" />
+        </a>
         </div>
       </div>
       <p class="bl_title mgfix"><?=$n->name;?></p>

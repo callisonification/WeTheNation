@@ -284,9 +284,11 @@ $(document).ready(function(){
 		$('.mbrholder').hover(
 			function(){
 				$(this).css({'background-color' : '#e3d9c3'});
+				$(this).find('.mgfix').css({'text-decoration' : 'underline'})
 			},
 			function(){
 				$(this).css({'background-color' : 'transparent'});
+				$(this).find('.mgfix').css({'text-decoration' : 'none'})				
 		});
 		
 		//=====Hover effect for Bills in the news modules=======//
