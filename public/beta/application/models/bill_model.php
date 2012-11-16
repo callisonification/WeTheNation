@@ -2,6 +2,14 @@
 
 class Bill_model extends CI_Model {
 	
+	function bill_details($id) {
+		
+		$q = $this->db->get_where('bills_master', array('id' => $id));
+		$bill = $q->result();
+		return $bill[0];
+			
+	}	
+	
 	function get_all_bills() {
 	
 		$q = $this->db->get('bills_master', 100);
@@ -67,6 +75,8 @@ class Bill_model extends CI_Model {
 		
 	}//end get house bills function
 	
+	 //this function pulls all bill statuses from the db, checks their value and cleans them up accordingly
+	//the cleans statuses are then pushed back into the db via update
 	function fix_bill_status() {
 		$this->db->select('id, current_status');
 		$q = $this->db->get('bills_master');
@@ -145,7 +155,32 @@ class Bill_model extends CI_Model {
 			
 			$this->db->where('id', $item->id);
 			$this->db->update('bills_master', $data);
+		
+		}//end foreach loop
+	
+	}//end fix bill status function
+	
+	function get_newest_bills() {
+		
+		$this->db->order_by('intro_date', 'desc');
+		$q = $this->db->get('bills_master', 10);
+		return $q->result();
+			
+	}//End get new
+	
+	function get_bill_sidebar($bid) {
+		
+		$q = $this->db->get_where('bills_master', array('id' => $bid));
+		
+		foreach($q->result() as $r){
+			$sid =  $r->sponsor_id;	
 		}
+		
+		$this->db->where('person_id', $sid);
+		$q = $this->db->get('members_master');
+		$result = $q->result();
+		
+		return $result;
 	}
 	
-}
+}//end bill model 

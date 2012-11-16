@@ -1,11 +1,11 @@
 <div id="bill_info_container">
   <div class="container">
-    <div id="mbr_heading" class="span9 red_title">
+    <div id="mbr_heading" class="span9">
     <?php if($this->uri->uri_string() === 'bill_list' || $this->uri->uri_string() === 'bill_list/senate_bills' || $this->uri->uri_string() === 'bill_list/house_bills'): ?>
       <div class="star_heading_left small"> <!-- Img applied via CSS --> </div>
       <h2>Congressional Bills</h2>
       <div class="star_heading_right small"> <!-- Img applied via CSS --> </div>
-      <p class="bill_def">Bills are the most common form of proposals for laws. They require approval from both the House and Senate, as well as the President's signature, in order to become laws. Below is each bill's official title, a link to a page with its full details, and its current status in Congress.</p>
+      <p class="bill_def">Bills are the most common form of proposals for laws. They require approval from both the House and Senate, as well as the President's signature, in order to become laws.</p>
     <?php elseif($this->uri->uri_string() === 'bill_list/senate_joint_res_bills' || $this->uri->uri_string() === 'bill_list/house_joint_res_bills'): ?>
       <div class="star_heading_left small"> <!-- Img applied via CSS --> </div>
       <h2>Joint Resolutions</h2>

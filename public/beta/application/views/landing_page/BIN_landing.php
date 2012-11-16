@@ -1,29 +1,40 @@
 <div id="topcontent" class="container">
-  <div id="news_heading" class="span9">
-    <div class="star_heading_left"> <!-- Img applied via CSS --> </div>
-    <h2 class="red_title">Bills In the News</h2>
-    <div class="star_heading_right"> <!-- Img applied via CSS --> </div>
-  </div>
-  <div id="news" class="span9">
-  	<?php foreach($bills as $bill): ?>
-    <div class="module news">
-      <div class="icon stock"> <!-- Img applied via CSS --> 
-      	<p class="bill_num"><?=$bill->display_num;?></p>
-        <?php if($bill->bill_type == 'senate_bill' || $bill->bill_type == 'senate_joint_resolution' || $bill->bill_type == 'senate_concurrent_resolution' || $bill->bill_type == 'senate_resolution'):?>
-        <p class="bill_name">Senate</p>
-        <?php elseif($bill->bill_type == 'house_bill' || $bill->bill_type == 'house_joint_resolution' || $bill->bill_type == 'house_concurrent_resolution' || $bill->bill_type == 'house_resolution'):?>
-        <p class="bill_name">House</p>
-        <?php endif; ?>
-      </div>
-      <a href="<?php echo site_url('bill_detail/get_details/'.$bill->id); ?>" title="View this bill >>">
-      <h3 class="bl_title"><?=$bill->title_common;?></h3>
-      <p><?=$bill->bill_summary;?></p>
-      </a>
-      <div class="star_split"> <!-- Img applied via CSS --> </div>
+<div id="news_heading" class="span9">
+  <div class="star_heading_left"> <!-- Img applied via CSS --> </div>
+  <h2 class="red_title">Bills In the News</h2>
+  <div class="star_heading_right"> <!-- Img applied via CSS --> </div>
+</div>
+<div id="news" class="span9">
+  <?php foreach($bills as $bill): ?>
+  <div class="module news">
+    <div class="icon stock"> <!-- Img applied via CSS -->
+      <p class="bill_num">
+        <?=$bill->display_num;?>
+      </p>
+      <?php if($bill->bill_type == 'senate_bill' || $bill->bill_type == 'senate_joint_resolution' || $bill->bill_type == 'senate_concurrent_resolution' || $bill->bill_type == 'senate_resolution'):?>
+      <p class="bill_name">Senate</p>
+      <?php elseif($bill->bill_type == 'house_bill' || $bill->bill_type == 'house_joint_resolution' || $bill->bill_type == 'house_concurrent_resolution' || $bill->bill_type == 'house_resolution'):?>
+      <p class="bill_name">House</p>
+      <?php endif; ?>
     </div>
-    <?php endforeach; ?>
-    
-<!-- // pagination built and ready / currently only shows 5 results //
+    <a href="<?php echo site_url('bill_detail/get_details/'.$bill->id); ?>" title="View Bill Details">
+    <h3 class="bl_title">
+      <?=$bill->title_common;?>
+    </h3>
+    <!-- Checks for a NULL or empty summary // these guys used a tab space to fill in blanks (dumb) -->
+    <?php if($bill->bill_summary === NULL || $bill->bill_summary === '	'):?>
+    <p>No summary available at this time...</p>
+    <?php else:?>
+    <p>
+      <?=word_limiter($bill->bill_summary, 75);?>
+    </p>
+    <?php endif;?>
+    </a>
+    <div class="star_split"> <!-- Img applied via CSS --> </div>
+  </div>
+  <?php endforeach; ?>
+  
+  <!-- // pagination built and ready / currently only shows 5 results //
     <div class="pagination pagination-centered">
       <ul>
         <li class="disabled"><a href="#">Prev</a></li>
@@ -33,5 +44,5 @@
         <li><a href="#">4</a></li>
         <li><a href="#">Next</a></li>
       </ul>
-    </div>	//-->  
+    </div>	//--> 
 </div>

@@ -87,7 +87,6 @@ class Account extends CI_Controller {
 		$this->form_validation->set_rules('email', 'Email Address', 'required|valid_email|callback_email_exists');
 		$this->form_validation->set_rules('password', 'Password', 'required|min_length[6]|max_length[15]|matches[repass]|sha1');
 		$this->form_validation->set_rules('repass', 'Password', 'required|matches[password]|sha1');
-		//$this->form_validation->set_rules('zip', 'Zip Code', 'required|min_length[5]|max_length[5]|callback_zip_check');
 		//$this->form_validation->set_rules('robot', 'Solution', 'required|min_length[1]|max_length[2]|callback_bot_check');
 		
 		//checks for validation 
@@ -97,11 +96,9 @@ class Account extends CI_Controller {
 				
 		}else{
 			
+			$data['display_name'] = $this->input->post('fname');
 			$data['user_email'] = $this->input->post('email');
 			$data['user_pass'] = sha1( $this->_salt . $this->input->post('password') );
-			$data['user_zip'] = $this->input->post('zip');
-			//$data['district_state'] = $this->input->post('email');
-			//$data['district_num'] = $this->input->post('email');
 			
 			if($this->account_model->create($data) === TRUE){
 				
@@ -130,6 +127,17 @@ class Account extends CI_Controller {
 		return TRUE;
 			
 	}//end email check function
+	
+	function bot_check($solution) {
+		
+		if($solution !== 4){
+			$this->session->set_userdata(array('bot_error' => 'Incorrect Answer, Try Again.'));		
+			return FALSE;
+		}
+				
+		return TRUE;
+			
+	}//end email check function	
 	
 	function zip_check($zip) {
 		

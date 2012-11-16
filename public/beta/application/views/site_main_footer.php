@@ -343,8 +343,8 @@
       <h6>Sign up for our Newsletter:</h6>
       <p>Sign up for our newletter to receive updates about the site, its members, and future updates and features</p>
       <form class="navbar-form pull-left">
-        <button type="submit" class="btn"><i class="icon-envelope"></i></button>
-        <input type="text" class="span4" placeholder="Enter email address">
+        <button type="submit" class="btn" id="nwsltr_btn"><i class="icon-envelope"></i></button>
+        <input type="text" class="span4" placeholder="Enter email address" name="newsltr_email" id="newsltr_email">
       </form>
     </div>
   </div>

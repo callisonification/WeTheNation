@@ -11,6 +11,7 @@ class Curl_calls extends CI_Controller {
 	function get_gt_bills() {
 		
 		$this->load->model('curl_model');
+		$this->load->model('bill_model');
 		for($i=0; $i<=11; $i++){
 			
 			$this->curl_model->get_gt_bills($i);
@@ -18,6 +19,8 @@ class Curl_calls extends CI_Controller {
 			//echo 'page '.$i.' loaded'.'<br>';
 			
 		}//end loop
+		
+		$this->bill_model->fix_bill_status();
 		
 	}//end get Govtrack bills function
 	
@@ -59,5 +62,12 @@ class Curl_calls extends CI_Controller {
 		}//end for loop
 			
 	}//end get_oc_members function - democrats
+	
+	function get_mbr_news() {
+		
+		$this->load->model('curl_model');
+		$this->curl_model->get_mbr_news();
 			
+	}
+				
 }//end curl controller class

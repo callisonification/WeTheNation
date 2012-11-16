@@ -1,5 +1,5 @@
 <?php if(uri_string() === 'member_list/senate_members'): ?>
-<div id="mbr_info_container" class="small">
+<div id="bill_info_container">
   <div class="container">
     <div id="mbr_heading" class="span9">
       <div class="star_heading_left"> <!-- Img applied via CSS --> </div>
@@ -27,7 +27,7 @@
   </div>
 </div>
 <?php elseif(uri_string() === 'member_list/house_members'): ?>
-<div id="mbr_info_container" class="small">
+<div id="bill_info_container">
   <div class="container">
     <div id="mbr_heading" class="span9">
       <div class="star_heading_left"> <!-- Img applied via CSS --> </div>

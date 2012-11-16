@@ -2,6 +2,7 @@
 
 class Curl_model extends CI_Model {
 	
+	//gets bill information from Govtrack.us
 	function get_gt_bills($inc) {
 		
 		//makes API call to Govtrack bill data API
@@ -43,13 +44,28 @@ class Curl_model extends CI_Model {
 				'bill_num' => $num
 			);
 			
-			//insert records into database
-			$this->db->insert('bills_master', $data);
+			  //checks the DB to see if a matching record already exists
+			 //if it does then that record is updated with the above iformation from the API
+			//if it does not exist then the record is created using the above info
+			$this->db->where('display_num', $dn);
+			$q = $this->db->get('bills_master');
+			
+			if($q->num_rows() > 0 ){
+				//insert records into database
+				$this->db->where('display_num', $dn);				
+				$this->db->update('bills_master', $data);
+				echo 'record updated';
+			}else{
+				//update record if it already exists
+				$this->db->insert('bills_master', $data);
+				echo 'record inserted';
+			}
 			
 		}//end foreach loop
 		
 	}//end get Govtrack bills function
 	
+	//gets member information from Govtrack.us
 	function get_gt_members($inc) {
 		
 		//makes API call to Govtrack persons API and returns results
@@ -97,8 +113,22 @@ class Curl_model extends CI_Model {
 					'youtube_id' => $yt
 				);
 				
-				//insert records into members table
-				$this->db->insert('members_master', $data);
+				  //checks the DB to see if a matching record already exists
+				 //if it does then that record is updated with the above iformation from the API
+				//if it does not exist then the record is created using the above info
+				$this->db->where('bioguide_id', $bid);
+				$q = $this->db->get('members_master');
+				
+				if($q->num_rows() > 0 ){
+					//insert records into database
+					$this->db->where('bioguide_id', $bid);				
+					$this->db->update('members_master', $data);
+					echo 'record updated';
+				}else{
+					//update record if it already exists
+					$this->db->insert('members_master', $data);
+					echo 'record inserted';
+				}
 
 			}//end conditional check - makes sure member has a congress number (current)
 			
@@ -106,6 +136,7 @@ class Curl_model extends CI_Model {
 		
 	}//end get Govtrack Members function
 	
+	//gets secondary bill information from Opencongress.org
 	function get_oc_bills($inc) {
 		
 		//makes API call to OpenCongress bill data API
@@ -141,10 +172,6 @@ class Curl_model extends CI_Model {
 				$billtype = 'H.Con.Res.';
 			}
 			
-//			echo '<pre>';
-//			echo $billtype . $billnum;
-//			echo '</pre>';
-			
 			//assign values from variables into an array
 			$data = array(
 				'title_common' => $tc,
@@ -152,9 +179,7 @@ class Curl_model extends CI_Model {
 				'bill_summary' => $sum,
 				'sponsor_id' => $sid
 			);
-			
-//			var_dump($data);
-			
+						
 			//find the record in database by bill type and number and update record accordingly
 			$this->db->where('display_num', $billtype . ' ' . $billnum);
 			$this->db->update('bills_master', $data);
@@ -162,22 +187,19 @@ class Curl_model extends CI_Model {
 		}//end foreach
 			
 	}//end get_oc_bills function
-		
+	
+	//gets secondary member information from Opencongress.org	
 	function get_oc_members($inc) {
 
-		$this->db->select('person_id, phone');
+		$this->db->select('person_id');
+		$this->db->where('webform', NULL);		
 		$q = $this->db->get('members_master');
 		
 		foreach($q->result() as $row){
 						
-				$result = $this->curl->simple_get('http://api.opencongress.org/people?person_id='.$row->person_id.'&format=json');
-				$xml = json_decode($result, TRUE);
+			$result = $this->curl->simple_get('http://api.opencongress.org/people?person_id='.$row->person_id.'&format=json');
+			$xml = json_decode($result, TRUE);
 				
-				echo '<pre>';
-				echo $row->person_id;
-				echo '</pre>';				
-				
-			
 			foreach($xml['people'] as $obj){
 									
 				$pid = $obj['person']['person_id'];
@@ -199,6 +221,7 @@ class Curl_model extends CI_Model {
 					'webform' => $eml
 				);
 				
+				//updates record where it finds a matching person id
 				$this->db->where('person_id', $pid);
 				$this->db->update('members_master', $data);
 											
@@ -208,6 +231,8 @@ class Curl_model extends CI_Model {
 			
 	}//end get_oc_members_d function
 	
+	//retrieves a list of ids from Opencongress.org regarding bills in the news
+	//ids are then queried in db to pull back bill information- > returned to landing controller
 	function get_oc_BIN() {
 		
 		$result = simplexml_load_file('http://api.opencongress.org/bills_in_the_news_this_week');
@@ -215,7 +240,9 @@ class Curl_model extends CI_Model {
 		
 		foreach($result->bill as $obj){
 			$billtype = $obj->{'bill-type'};
+			$sponsor = $obj->{'sponsor-id'};
 			$num = $obj->number;
+			$sum = $obj->summary;
 			
 			 //check the bill type and change it accordingly to match my database
 			//NOTE: this uses == instead of === || is not the same as the conditional above
@@ -237,15 +264,67 @@ class Curl_model extends CI_Model {
 				$billtype = 'H.Con.Res.';
 			}
 			
+			$data = array(
+				'sponsor_id' => $sponsor,
+				'bill_summary' => stripslashes($sum)
+			);
+			
+			$this->db->where('display_num', $billtype.' '.$num);
+			$this->db->update('bills_master', $data);
+			
 			$list .= '"'.$billtype.' '.$num.'",';
 		}
 		
+		//removes trailing comma
 		$list = substr_replace($list, '', -1);
+		
+		//selects records from db and returns the array of values
 		$sql = 'SELECT * FROM bills_master where display_num in ('.$list.')';
 		$q = $this->db->query($sql);
 		$bills = $q->result();
 		
+		
 		return $bills;
 	}
+	
+	//gets recent news articles for members from Opencongress.org
+	function get_mbr_news() {
+	
+		$this->db->select('person_id');
+		$q = $this->db->get('members_master');
 		
-}
+		foreach($q->result() as $r){
+			
+			$pid = $r->person_id;
+			$result = $this->curl->simple_get('http://api.opencongress.org/people?person_id='.$pid.'&format=json');
+			$xml = json_decode($result, TRUE);
+						
+			foreach($xml['people'] as $obj){
+				
+				$bid = $obj['person']['bioguide_id'];
+				$pid = $obj['person']['person_stats']['person_id'];
+				$name = $obj['person']['name'];
+				for($i=0; $i<10; $i++){
+					$title = $obj['person']['recent_news'][$i]['title'];
+					$url = $obj['person']['recent_news'][$i]['url'];
+					
+					$data = array(
+						'bioguide_id' => $bid,
+						'person_id' => $pid,
+						'name' => $name,
+						'title' => $title,
+						'url' => $url
+					);
+					
+					$this->db->insert('news_archive', $data);
+					echo $name.' inserted';
+				
+				}//end for loop
+				
+			}//end inner foreach loop
+			
+		}//end outer foreach loop
+		
+	}//end get member news function
+					
+}//end curl model class

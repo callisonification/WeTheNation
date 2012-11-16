@@ -1,14 +1,18 @@
 <div id="mbr_info_container">
   <div class="container">
     <div class="mbr_detail_container">
-      <div class="mbr_dtl_img"><img src="<?=base_url('img/slices/mbr_lg.jpg');?>" title="Person Name" width="150px" height="190px"></div>
-      <h3 class="bl_title">
-        <?=$person->display_name;?>
-      </h3>
+      <div class="mbr_dtl_img"><img src="<?=base_url('img/slices/missing_user.png');?>" title="Person Name" width="150px" height="190px"></div>
+      <h3 class="bl_title"><?=$person->display_name;?></h3>
+      <?php if($person->user_party !== NULL):?>
       <h5 class="bl_title">[ <?=$person->user_party;?> ]</h5>
-      <p class="user_status">
-        <?=$person->display_status;?>
-      </p>
+      <?php else:?>
+      <h5 class="bl_title">[ Set your party, click Edit Info ]</h5>
+      <?php endif;?>
+      <?php if($person->display_status !== NULL):?>
+      <p class="user_status"><?=$person->display_status;?></p>
+      <?php else:?>
+      <p class="user_status">No display message set, click edit info</p>
+      <?php endif;?>
       <ul class="mbr_info_stats dashboard">
         <li><i class="icon-star"></i> Votes With Party : <strong>XX%</strong></li>
         <li><i class="icon-eye-open"></i> Bills Watching : <strong>XX</strong></li>

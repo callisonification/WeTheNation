@@ -1,27 +1,14 @@
   <div id="mbr_sidebar" class="span4 offset1 marginfix">
     <h4 class="red_title">Bill Sponsored By</h4>
-    <div class="mbr_detail_sidebar"> <a href="#">
-      <h5 class="bl_title">FirstName LastName</h5>
-      <div class="img"><img src="<?php echo base_url('img/slices/mbr.jpg');?>"></div>
+    <div class="mbr_detail_sidebar"> <a href="<?=site_url('member_detail/get_details/'.$info[0]->person_id);?>">
+      <h5 class="bl_title"><?=$info[0]->display_name;?></h5>
+      <div class="img"><img src="<?php echo base_url('img/members/'.$info[0]->bioguide_id.'.jpg');?>"></div>
       <div class="sidebar_info">
-        <p>Republican - GA</p>
-        <p>Representative</p>
+        <p><?=$info[0]->party;?></p>
+        <p><?=$info[0]->role_type;?></p>
         <div class="sidebar_rating">
           <p class="bl_title">Approval Rating</p>
-          <p><span>40%</span></p>
-        </div>
-      </div>
-      </a> </div>
-    <h4 class="red_title">Co-sponsors For This Bill</h4>
-    <div class="mbr_detail_sidebar"> <a href="#">
-      <h5 class="bl_title">FirstName LastName</h5>
-      <div class="img"><img src="<?php echo base_url('img/slices/mbr.jpg');?>"></div>
-      <div class="sidebar_info">
-        <p>Republican - GA</p>
-        <p>Representative</p>
-        <div class="sidebar_rating">
-          <p class="bl_title">Approval Rating</p>
-          <p><span>40%</span></p>
+          <p><span>XX%</span></p>
         </div>
       </div>
       </a> </div>
