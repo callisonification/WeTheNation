@@ -10,7 +10,7 @@ class Email_handler extends CI_Controller {
 		$mssg = $this->input->post('message');
 		
 		$this->email->from('bug-report@wethenation.us', 'Bug Report');
-		$this->email->to('wethenation.us@gmail.com');
+		$this->email->to('info@wethenation.us');
 		$this->email->subject($subject);
 		$this->email->message($mssg);
 		
