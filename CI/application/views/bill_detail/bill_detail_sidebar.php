@@ -1,6 +1,6 @@
   <div id="mbr_sidebar" class="span4 offset1 marginfix">
     <h4 class="red_title">Bill Sponsored By</h4>
-    <div class="mbr_detail_sidebar"> <a href="<?=site_url('member_detail/get_details/'.$info[0]->id);?>">
+    <div class="mbr_detail_sidebar"> <a href="<?=site_url('member_detail/get_details/'.$info[0]->person_id);?>">
       <h5 class="bl_title"><?=$info[0]->display_name;?></h5>
       <div class="img"><img src="<?php echo base_url('img/members/'.$info[0]->bioguide_id.'.jpg');?>"></div>
       <div class="sidebar_info">

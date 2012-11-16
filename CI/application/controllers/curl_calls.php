@@ -69,5 +69,5 @@ class Curl_calls extends CI_Controller {
 		$this->curl_model->get_mbr_news();
 			
 	}
-			
+				
 }//end curl controller class

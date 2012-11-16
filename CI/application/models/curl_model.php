@@ -2,6 +2,7 @@
 
 class Curl_model extends CI_Model {
 	
+	//gets bill information from Govtrack.us
 	function get_gt_bills($inc) {
 		
 		//makes API call to Govtrack bill data API
@@ -64,6 +65,7 @@ class Curl_model extends CI_Model {
 		
 	}//end get Govtrack bills function
 	
+	//gets member information from Govtrack.us
 	function get_gt_members($inc) {
 		
 		//makes API call to Govtrack persons API and returns results
@@ -134,6 +136,7 @@ class Curl_model extends CI_Model {
 		
 	}//end get Govtrack Members function
 	
+	//gets secondary bill information from Opencongress.org
 	function get_oc_bills($inc) {
 		
 		//makes API call to OpenCongress bill data API
@@ -184,7 +187,8 @@ class Curl_model extends CI_Model {
 		}//end foreach
 			
 	}//end get_oc_bills function
-		
+	
+	//gets secondary member information from Opencongress.org	
 	function get_oc_members($inc) {
 
 		$this->db->select('person_id');
@@ -227,6 +231,8 @@ class Curl_model extends CI_Model {
 			
 	}//end get_oc_members_d function
 	
+	//retrieves a list of ids from Opencongress.org regarding bills in the news
+	//ids are then queried in db to pull back bill information- > returned to landing controller
 	function get_oc_BIN() {
 		
 		$result = simplexml_load_file('http://api.opencongress.org/bills_in_the_news_this_week');
@@ -281,32 +287,44 @@ class Curl_model extends CI_Model {
 		return $bills;
 	}
 	
+	//gets recent news articles for members from Opencongress.org
 	function get_mbr_news() {
 	
-//		$this->db->select('person_id');
-//		$q = $this->db->get('members_master');
-//		
-//		foreach($q->result() as $r){
+		$this->db->select('person_id');
+		$q = $this->db->get('members_master');
+		
+		foreach($q->result() as $r){
 			
-			//$pid = $r->person_id;
-			$result = $this->curl->simple_get('http://api.opencongress.org/people?person_id=300056&format=json');
+			$pid = $r->person_id;
+			$result = $this->curl->simple_get('http://api.opencongress.org/people?person_id='.$pid.'&format=json');
 			$xml = json_decode($result, TRUE);
-			
-			var_dump($xml['people']['person']);
-			
+						
 			foreach($xml['people'] as $obj){
 				
 				$bid = $obj['person']['bioguide_id'];
 				$pid = $obj['person']['person_stats']['person_id'];
 				$name = $obj['person']['name'];
-				$title = $obj['person']['recent_news']['title'];
-				$url = $obj['person']['recent_news']['url'];
+				for($i=0; $i<10; $i++){
+					$title = $obj['person']['recent_news'][$i]['title'];
+					$url = $obj['person']['recent_news'][$i]['url'];
+					
+					$data = array(
+						'bioguide_id' => $bid,
+						'person_id' => $pid,
+						'name' => $name,
+						'title' => $title,
+						'url' => $url
+					);
+					
+					$this->db->insert('news_archive', $data);
+					echo $name.' inserted';
 				
-				echo $bid;
-				echo $title;
-			}
+				}//end for loop
+				
+			}//end inner foreach loop
 			
-//		}
-	}
+		}//end outer foreach loop
 		
-}
+	}//end get member news function
+					
+}//end curl model class

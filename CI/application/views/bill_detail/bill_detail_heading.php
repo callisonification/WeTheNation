@@ -4,9 +4,13 @@
     <h3 class="bl_title">
       <?=word_limiter($bill->title_full, 18);?>
     </h3>
+    <?php if($bill->bill_summary === NULL || $bill->bill_summary === '	'):?>
+    <p>No summary available at this time...</p>
+    <?php else:?>
     <p>
-      <?=character_limiter($bill->bill_summary, 500);?>
+      <?=$bill->bill_summary;?>
     </p>
+    <?php endif;?>
     <div class="secondary_info"> <a href="#full_sum" role="button" class="btn btn-small" data-toggle="modal"><i class="icon-list"></i> Full Summary</a>
       <div id="full_sum" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
@@ -16,9 +20,13 @@
           </h3>
         </div>
         <div class="modal-body">
+          <?php if($bill->bill_summary === NULL || $bill->bill_summary === '	'):?>
+          <p>No summary available at this time...</p>
+          <?php else:?>
           <p>
             <?=$bill->bill_summary;?>
           </p>
+          <?php endif;?>
         </div>
         <div class="modal-footer">
           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -28,7 +36,9 @@
       <div id="full_bill" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h3 id="myModalLabel"><?=$bill->title_full;?></h3>
+          <h3 id="myModalLabel">
+            <?=$bill->title_full;?>
+          </h3>
         </div>
         <div class="modal-body">
           <p>One fine body…</p>
@@ -69,8 +79,8 @@
     </div>
     <?php if($this->session->userdata('logged_in') == FALSE):?>
     <div id="not_a_user">
-    	<p>Want to vote on this bill?</p>
-        <p><a href="">Sign In</a> or <a href="">Sign Up</a></p>
+      <p>Want to vote on this bill?</p>
+      <p><a href="">Sign In</a> or <a href="">Sign Up</a></p>
     </div>
     <?php endif;?>
     <div id="bill_rating_container" class="span5 offset1">
@@ -78,25 +88,29 @@
       <p>Approve</p>
       <p>Disapprove</p>
       <?php if($user_vote === NULL):?>
-      <a href="#" name="thumbup" class="thumbup thumb" title="Approve" data-billId="<?=$bill->id;?>" data-userId="<?=$this->session->userdata('user_id')?>" data-type="vote" data-vote="YAY">Approve</a>       
+      <a href="#" name="thumbup" class="thumbup thumb" title="Approve" data-billId="<?=$bill->id;?>" data-userId="<?=$this->session->userdata('user_id')?>" data-type="vote" data-vote="YAY">Approve</a>
       <?php elseif($user_vote[0]->vote_value === 'YAY'):?>
-      <a href="#" name="thumbup" class="thumbup thumb active" title="Approve" data-billId="<?=$bill->id;?>" data-userId="<?=$this->session->userdata('user_id')?>" data-type="vote" data-vote="YAY">Approve</a> 
+      <a href="#" name="thumbup" class="thumbup thumb active" title="Approve" data-billId="<?=$bill->id;?>" data-userId="<?=$this->session->userdata('user_id')?>" data-type="vote" data-vote="YAY">Approve</a>
       <?php else:?>
-      <a href="#" name="thumbup" class="thumbup thumb" title="Approve" data-billId="<?=$bill->id;?>" data-userId="<?=$this->session->userdata('user_id')?>" data-type="vote" data-vote="YAY">Approve</a>       
+      <a href="#" name="thumbup" class="thumbup thumb" title="Approve" data-billId="<?=$bill->id;?>" data-userId="<?=$this->session->userdata('user_id')?>" data-type="vote" data-vote="YAY">Approve</a>
       <?php endif;?>
       <?php if($user_vote === NULL):?>
-      <a href="#" name="thumbdown" class="thumbdown thumb" title="Disapprove" data-billId="<?=$bill->id;?>" data-userId="<?=$this->session->userdata('user_id')?>" data-type="vote" data-vote="NAY">Disapprove</a>      
-      <?php elseif($user_vote[0]->vote_value === 'NAY'):?>      
+      <a href="#" name="thumbdown" class="thumbdown thumb" title="Disapprove" data-billId="<?=$bill->id;?>" data-userId="<?=$this->session->userdata('user_id')?>" data-type="vote" data-vote="NAY">Disapprove</a>
+      <?php elseif($user_vote[0]->vote_value === 'NAY'):?>
       <a href="#" name="thumbdown" class="thumbdown thumb active" title="Disapprove" data-billId="<?=$bill->id;?>" data-userId="<?=$this->session->userdata('user_id')?>" data-type="vote" data-vote="NAY">Disapprove</a>
       <?php else:?>
-      <a href="#" name="thumbdown" class="thumbdown thumb" title="Disapprove" data-billId="<?=$bill->id;?>" data-userId="<?=$this->session->userdata('user_id')?>" data-type="vote" data-vote="NAY">Disapprove</a>      
+      <a href="#" name="thumbdown" class="thumbdown thumb" title="Disapprove" data-billId="<?=$bill->id;?>" data-userId="<?=$this->session->userdata('user_id')?>" data-type="vote" data-vote="NAY">Disapprove</a>
       <?php endif;?>
       <?php if($bill->approval_rating === NULL || $bill->approval_rating == 0):?>
       <p class="approval_rating">0%</p>
-      <p class="disapproval_rating">0%</p>      
+      <p class="disapproval_rating">0%</p>
       <?php else:?>
-      <p class="approval_rating"><?=$bill->approval_rating;?>%</p>    
-      <p class="disapproval_rating"><?=($bill->approval_rating - 100);?>%</p>
+      <p class="approval_rating">
+        <?=$bill->approval_rating;?>
+        %</p>
+      <p class="disapproval_rating">
+        <?=($bill->approval_rating - 100);?>
+        %</p>
       <?php endif;?>
     </div>
   </div>
