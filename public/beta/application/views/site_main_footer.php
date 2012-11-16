@@ -359,7 +359,11 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
 <!-- Bootstrap plugin -->
 <script src="<?php echo base_url('js/bootstrap.min.js');?>"></script>
-<script src="<?php echo base_url('js/main.js');?>"></script>
 <script src="<?php echo base_url('js/jquery_scrollTo.1.4.3.min.js');?>"></script>
+<script src="<?php echo base_url('js/jquery.validate.min.js');?>"></script>
+<?php if($this->session->userdata('logged_in') !== TRUE):?>
+<script src="<?php echo base_url('js/geo.js');?>"></script>
+<?php endif;?>
+<script src="<?php echo base_url('js/main.js');?>"></script>
 <!-- Custom Plugins -->
 </html>

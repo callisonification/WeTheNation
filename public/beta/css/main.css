@@ -604,9 +604,11 @@ body {
 	font-weight: bold;
 	text-shadow: 0px 1px 1px #fff;	
 }
-#signup span {
-	color: #872501;
-	display: none;
+#signup em {
+	font-size:10px;	
+}
+#signup span, label.error {
+	color: #872501 !important;
 }
 #signup #submit {
 	margin: 20px 0;

@@ -8,8 +8,7 @@ $(document).ready(function(){
 			'html' : true,
 			'placement' : 'bottom',
 			'trigger' : 'click',
-			'content' : '<form name="login_form" method="POST" action="/account/login"><label>Email</label><input type="text" name="email" /><label>Password</label><input type="password" name="password" /><input type="submit" value="Login" class="btn" /> <a href="#" id="si_cxl">Cancel</a></form>',
-		}); 
+			'content' : '<form name="login_form" method="POST" action="/account/login"><label>Email</label><input type="text" name="email" /><label>Password</label><input type="password" name="password" /><input type="submit" value="Login" class="btn" /></form>'}); 
 		
 		//=====scrollTo sign up form=======//
 		$('#su').click(function(){		
@@ -47,7 +46,7 @@ $(document).ready(function(){
 			
 			//takes data attributes and  send them to PHP script (model)
 			$.ajax({
-				url : '/wtn/ci/ajax_controller/update_mbr_rate',
+				url : '/ajax_controller/update_mbr_rate',
 				type : 'POST',
 				data : {
 					'user_id' : uid,
@@ -76,7 +75,7 @@ $(document).ready(function(){
 		var get_new_rate = function(id){
 			
 			$.ajax({
-				url : '/wtn/ci/ajax_controller/get_mbr_rate/'+id,
+				url : '/ajax_controller/get_mbr_rate/'+id,
 				type : 'POST',
 				success : function(data){
 					var newrate = data;
@@ -99,7 +98,7 @@ $(document).ready(function(){
 			var tp = $('#mbr_comment_form').find('#comment_type').attr('value');			
 			
 			$.ajax({
-				url : '/wtn/ci/ajax_controller/add_mbr_comment',
+				url : '/ajax_controller/add_mbr_comment',
 				type : 'POST',
 				data : {
 					'user_id' : uid,
@@ -124,7 +123,7 @@ $(document).ready(function(){
 		var update_mbr_comments = function(id){
 			
 			$.ajax({
-				url : '/wtn/ci/ajax_controller/get_mbr_comments/'+id,
+				url : '/ajax_controller/get_mbr_comments/'+id,
 				type : 'POST',
 				dataType:"json",
 				success : function(data){
@@ -221,7 +220,7 @@ $(document).ready(function(){
 			var vote = $(this).attr('data-vote');
 			
 			$.ajax({
-				url : '/wtn/ci/ajax_controller/update_bill_vote',
+				url : '/ajax_controller/update_bill_vote',
 				type : 'POST',
 				data : {
 					'user_id' : uid,
@@ -266,7 +265,7 @@ $(document).ready(function(){
 			var email = $('#newsltr_email').val();
 			
 			$.ajax({
-				url : '/wtn/ci/ajax_controller/newsltr_signup',
+				url : '/ajax_controller/newsltr_signup',
 				type : 'POST',
 				data : {
 					'user_email' : 	email
@@ -307,13 +306,28 @@ $(document).ready(function(){
 		//=====Fixes model z-indexing issue for modals=======//
 		$('.modal').appendTo($('body'));
 		
-//		console.log(window.location.pathname);
-//		navigator.geolocation.getCurrentPosition(showPosition);
-//		function showPosition(position)
-//		  {
-//		  console.log("Latitude: " + position.coords.latitude +
-//		  "<br>Longitude: " + position.coords.longitude);
-//		  }
 		
+		$('#signup').validate({
+			rules : {
+				fname : 'required',
+				email : {
+					required : true,
+					email : true	
+				},
+				password : {
+					required : true,
+					mixlength : 6,
+					maxlength : 15	
+				},
+				repass : {
+					equalTo : '#password',
+					required : true	
+				},
+				robot : {
+					required : true,
+					equalTo : 4	
+				}
+			}	
+		});		
  });
  //end of JS file
