@@ -17,7 +17,8 @@
     <?php endforeach;?>
     <?php if($comment == NULL):?>
     <p class="no_comments">This member has no comments, be the first to write one!</p>
-    <?php endif;?>    
+    <?php endif;?>
+    <?php if($this->session->userdata('logged_in') === TRUE):?>
   <div id="comment_splitter"></div>
   <div id="add_comment"> <img src="<?php echo base_url('img/slices/missing_user.png');?>">
     <div class="comment_hook"> <!-- Img applied via CSS --></div>
@@ -34,4 +35,5 @@
       <input type="reset" class="btn-link reset" value="Cancel">
     </form>
   </div>
+  <?php endif;?>
 </div>

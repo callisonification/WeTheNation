@@ -7,7 +7,6 @@ class Bill_model extends CI_Model {
 		$q = $this->db->get_where('bills_master', array('id' => $id));
 		$bill = $q->result();
 		return $bill[0];
-			
 	}	
 	
 	function get_all_bills() {

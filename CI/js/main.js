@@ -279,6 +279,26 @@ $(document).ready(function(){
 			
 			return false;
 		});
+		
+		//sends ajax request to retrieve full bill information
+		$('#full_btn').click(function(){
+			
+			var url = $(this).attr('data-url');
+			
+			$.ajax({
+				url : '/wtn/ci/ajax_controller/bill_test',
+				type : 'POST',
+				data : {
+					url : url	
+				},
+				success: function(data){
+					$('#full_bill').find('.modal-body').append(data);	
+				},
+				error: function(fail){
+					console.log(fail);	
+				}
+			});
+		});
 							
 		//=====Hover effect for Members in the news modules=======//
 		$('.mbrholder').hover(

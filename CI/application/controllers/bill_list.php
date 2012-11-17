@@ -26,7 +26,7 @@ class Bill_List extends CI_Controller {
 		$this->load->model('bill_model');
 				
 		//functions that return bill data - passed to views
-		$result['bills'] = $this->bill_model->get_all_bills();
+		$result['bills'] = $this->bill_model->get_senate_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
 		
 		$this->load->view('site_main_header.php');
@@ -44,7 +44,7 @@ class Bill_List extends CI_Controller {
 		$this->load->model('bill_model');
 				
 		//functions that return bill data - passed to views
-		$result['bills'] = $this->bill_model->get_all_bills();
+		$result['bills'] = $this->bill_model->get_senate_joint_res_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
 		
 		$this->load->view('site_main_header.php');
@@ -62,7 +62,7 @@ class Bill_List extends CI_Controller {
 		$this->load->model('bill_model');
 				
 		//functions that return bill data - passed to views
-		$result['bills'] = $this->bill_model->get_all_bills();
+		$result['bills'] = $this->bill_model->get_senate_con_res_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
 		
 		$this->load->view('site_main_header.php');
@@ -80,7 +80,7 @@ class Bill_List extends CI_Controller {
 		$this->load->model('bill_model');
 				
 		//functions that return bill data - passed to views
-		$result['bills'] = $this->bill_model->get_all_bills();
+		$result['bills'] = $this->bill_model->get_senate_res_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
 		
 		$this->load->view('site_main_header.php');
@@ -100,7 +100,7 @@ class Bill_List extends CI_Controller {
 		$this->load->model('bill_model');
 				
 		//functions that return bill data - passed to views
-		$result['bills'] = $this->bill_model->get_all_bills();
+		$result['bills'] = $this->bill_model->get_house_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
 		
 		$this->load->view('site_main_header.php');
@@ -118,7 +118,7 @@ class Bill_List extends CI_Controller {
 		$this->load->model('bill_model');
 				
 		//functions that return bill data - passed to views
-		$result['bills'] = $this->bill_model->get_all_bills();
+		$result['bills'] = $this->bill_model->get_house_joint_res_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
 		
 		$this->load->view('site_main_header.php');
@@ -136,7 +136,7 @@ class Bill_List extends CI_Controller {
 		$this->load->model('bill_model');
 				
 		//functions that return bill data - passed to views
-		$result['bills'] = $this->bill_model->get_all_bills();
+		$result['bills'] = $this->bill_model->get_house_con_res_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
 		
 		$this->load->view('site_main_header.php');
@@ -154,7 +154,7 @@ class Bill_List extends CI_Controller {
 		$this->load->model('bill_model');
 				
 		//functions that return bill data - passed to views
-		$result['bills'] = $this->bill_model->get_all_bills();
+		$result['bills'] = $this->bill_model->get_house_res_bills();
 		$sidebar['newbills'] = $this->bill_model->get_newest_bills();		
 		
 		$this->load->view('site_main_header.php');

@@ -11,7 +11,11 @@
     </p>
     </a>
     <ul>
+      <?php if($member->approval_rating === NULL):?>
+      <li><i class="icon-star"></i> Approval Rating <strong>0%</strong></li>
+      <?php else:?>
       <li><i class="icon-star"></i> Approval Rating <strong><?=$member->approval_rating;?>%</strong></li>
+      <?php endif;?>
       <li><i class="icon-ok-sign"></i> With Party Vote <strong>
         <?=$member->with_party_percentage;?>
         %</strong></li>

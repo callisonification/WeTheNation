@@ -326,5 +326,11 @@ class Curl_model extends CI_Model {
 		}//end outer foreach loop
 		
 	}//end get member news function
+	
+	function bill_test($url) {
+		$result = file_get_contents($url);
+		
+		echo $result;
+	}
 					
 }//end curl model class

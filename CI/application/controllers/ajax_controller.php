@@ -141,6 +141,7 @@ class Ajax_controller extends CI_Controller {
 		echo json_encode($q);
 	}
 	
+	//adds user email to newsletter table 
 	function newsltr_signup() {
 		
 		$this->load->model('user_model');
@@ -151,6 +152,15 @@ class Ajax_controller extends CI_Controller {
 		
 		$this->user_model->newsltr_add_email($data);
 			
+	}
+	
+	//retrieves full bill text
+	function bill_test() {
+		
+		$url = $_POST['url'];
+		
+		$this->load->model('curl_model');
+		$this->curl_model->bill_test($url);	
 	}	
 		
 }//end ajax controller class

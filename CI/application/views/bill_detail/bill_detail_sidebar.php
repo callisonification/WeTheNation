@@ -8,7 +8,11 @@
         <p><?=$info[0]->role_type;?></p>
         <div class="sidebar_rating">
           <p class="bl_title">Approval Rating</p>
-          <p><span>XX%</span></p>
+          <?php if($info[0]->approval_rating === NULL):?>
+          <p><span>0%</span></p>
+          <?php else:?>
+          <p><span><?=$info[0]->approval_rating;?>%</span></p>
+          <?php endif;?>          
         </div>
       </div>
       </a> </div>

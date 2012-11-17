@@ -10,10 +10,10 @@
       </p>
       <ul class="mbr_info_stats">
         <li><i class="icon-adjust"></i>Total Session Votes : <strong><?=$member->total_session_votes;?></strong></li>
-        <?php if($member_rate['rate'] == 0):?>
+        <?php if($member->approval_rating === NULL):?>
         <li><i class="icon-star"></i>Approval Rating : <strong>0%</strong></li>
         <?php else:?>
-        <li><i class="icon-star"></i>Approval Rating : <strong><?=$member_rate['rate']?>%</strong></li>
+        <li><i class="icon-star"></i>Approval Rating : <strong><?=$member->approval_rating;?>%</strong></li>
         <?php endif;?>
         <li><i class="icon-ok-sign"></i>With Party Vote : <strong><?=$member->with_party_percentage;?>%</strong></li>
         <li><i class="icon-ban-circle"></i>Abstain Percentage : <strong><?=$member->abstains_percentage;?>%</strong></li>

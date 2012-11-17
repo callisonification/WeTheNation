@@ -32,7 +32,23 @@
           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
         </div>
       </div>
-      <a href="#full_bill" role="button" class="btn btn-small" data-toggle="modal"><i class="icon-file"></i> Full Bill</a>
+      <?php if($bill->bill_type_label === 'H.R.'):?>
+      <a href="#full_bill" role="button" class="btn btn-small" data-toggle="modal" id="full_btn" data-url="http://www.govtrack.us/data/us/bills.text/112/h/h<?=$bill->bill_num?>.html"><i class="icon-file"></i> Full Bill</a>
+      <?php elseif($bill->bill_type_label === 'H.Res.'):?>
+      <a href="#full_bill" role="button" class="btn btn-small" data-toggle="modal" id="full_btn" data-url="http://www.govtrack.us/data/us/bills.text/112/hr/hr<?=$bill->bill_num?>.html"><i class="icon-file"></i> Full Bill</a>
+      <?php elseif($bill->bill_type_label === 'H.Con.Res.'):?>
+      <a href="#full_bill" role="button" class="btn btn-small" data-toggle="modal" id="full_btn" data-url="http://www.govtrack.us/data/us/bills.text/112/hc/hc<?=$bill->bill_num?>.html"><i class="icon-file"></i> Full Bill</a>      
+      <?php elseif($bill->bill_type_label === 'H.J.Res.'):?>
+      <a href="#full_bill" role="button" class="btn btn-small" data-toggle="modal" id="full_btn" data-url="http://www.govtrack.us/data/us/bills.text/112/hj/hj<?=$bill->bill_num?>.html"><i class="icon-file"></i> Full Bill</a>      
+      <?php elseif($bill->bill_type_label === 'S.'):?>
+      <a href="#full_bill" role="button" class="btn btn-small" data-toggle="modal" id="full_btn" data-url="http://www.govtrack.us/data/us/bills.text/112/s/s<?=$bill->bill_num?>.html"><i class="icon-file"></i> Full Bill</a>
+      <?php elseif($bill->bill_type_label === 'S.Res.'):?>
+      <a href="#full_bill" role="button" class="btn btn-small" data-toggle="modal" id="full_btn" data-url="http://www.govtrack.us/data/us/bills.text/112/sr/sr<?=$bill->bill_num?>.html"><i class="icon-file"></i> Full Bill</a>
+      <?php elseif($bill->bill_type_label === 'S.Con.Res.'):?>
+      <a href="#full_bill" role="button" class="btn btn-small" data-toggle="modal" id="full_btn" data-url="http://www.govtrack.us/data/us/bills.text/112/sc/sc<?=$bill->bill_num?>.html"><i class="icon-file"></i> Full Bill</a>      
+      <?php elseif($bill->bill_type_label === 'S.J.Res.'):?>
+      <a href="#full_bill" role="button" class="btn btn-small" data-toggle="modal" id="full_btn" data-url="http://www.govtrack.us/data/us/bills.text/112/sj/sj<?=$bill->bill_num?>.html"><i class="icon-file"></i> Full Bill</a>      
+      <?php endif;?>
       <div id="full_bill" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
@@ -41,7 +57,7 @@
           </h3>
         </div>
         <div class="modal-body">
-          <p>One fine body…</p>
+          
         </div>
         <div class="modal-footer">
           <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>

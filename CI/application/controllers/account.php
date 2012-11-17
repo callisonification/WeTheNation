@@ -98,15 +98,15 @@ class Account extends CI_Controller {
 				
 		}else{
 			
-			$data['display_name'] = $this->input->post('fname');
-			$data['user_email'] = $this->input->post('email');
-			$data['user_pass'] = sha1( $this->_salt . $this->input->post('password') );
-			
 			$lat = $this->input->post('lat');
 			$lon = $this->input->post('lon');
 			$q = $this->curl->simple_get('http://services.sunlightlabs.com/api/districts.getDistrictFromLatLong.json?apikey=0d52916dee394bd589d5d5d3bb680315&latitude='.$lat.'&longitude='.$lon);
 			
-			$result = json_decode($q);
+			$result = json_decode($q);			
+			
+			$data['display_name'] = $this->input->post('fname');
+			$data['user_email'] = $this->input->post('email');
+			$data['user_pass'] = sha1( $this->_salt . $this->input->post('password') );		
 			$data['district_state'] = $result->response->districts[0]->district->state;
 			$data['district_num'] = $result->response->districts[0]->district->number;
 			

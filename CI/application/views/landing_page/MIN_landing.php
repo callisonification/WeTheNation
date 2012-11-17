@@ -14,6 +14,7 @@
         </div>
       </div>
       <p class="bl_title mgfix"><?=$n->name;?></p>
+      <br />
       <p class="article"><a href="<?=$n->url;?>" title="Go To Article" target="new"><?=$n->title;?></a></p>
     </div>
     <hr />
